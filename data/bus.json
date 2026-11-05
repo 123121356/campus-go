@@ -3,10 +3,10 @@
   "stop": {
     "id": "backgate",
     "name": "강원대 후문 정류장",
-    "lat": 37.4512,
-    "lng": 129.1585,
-    "verified": false,
-    "desc": "21-n번(삼척↔동해) 시내버스가 서는 후문 정류장입니다. 위치는 추정값이니 현장에서 확인해 bus.json 의 lat/lng 를 고쳐 주세요."
+    "lat": 37.454492,
+    "lng": 129.166327,
+    "verified": true,
+    "desc": "21-n번(삼척↔동해) 시내버스가 서는 후문 정류장입니다. 동문 바로 바깥 언장1길 위에 있습니다."
   },
   "directions": {
     "donghae": {
