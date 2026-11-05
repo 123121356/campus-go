@@ -2,7 +2,9 @@
 // 모드: 둘러보기(회전·확대) / 걸어서 보기(1인칭: 속도 1~5단계, 스페이스 두 번 = 비행, R = 리스폰)
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { buildCampus } from "./buildings3d.js?v=33";
+import { buildCampus } from "./buildings3d.js?v=35";
+import { initNPCs } from "./npc.js?v=38";
+import { buildStreetLights } from "./streetlights.js?v=37";
 
 const LAT0 = 37.4528, LNG0 = 129.1618;
 const MX = 111320 * Math.cos((LAT0 * Math.PI) / 180), MZ = 110950;
@@ -204,6 +206,8 @@ export function init3D(container, { data, buildings, onSelect, theme = "light" }
   }
   const { meshes, byId, solids, wallMats, glassMats, edgeMat } = built;
   const inSolid = (x, z, pad = 0) => solids.some((s) => x > s.box[0] - pad && x < s.box[2] + pad && z > s.box[1] - pad && z < s.box[3] + pad && (pad ? pip(x, z, s.ring) || pip(x + pad, z, s.ring) || pip(x - pad, z, s.ring) || pip(x, z + pad, s.ring) || pip(x, z - pad, s.ring) : pip(x, z, s.ring)));
+  // 가로등: 도로를 따라 세우고 밤(다크 테마)에만 켬
+  const lamps = buildStreetLights({ scene, roadSegs, inSolid, inBounds });
 
   // ---------- 나무 (인스턴스) ----------
   const rand = rng(20251106), treeSpots = [];
@@ -306,6 +310,7 @@ export function init3D(container, { data, buildings, onSelect, theme = "light" }
     sun.intensity = t === "dark" ? 0.6 : 2.0;
     hemi.intensity = t === "dark" ? 0.7 : 1.1;
     fenceMat.opacity = t === "dark" ? 0.18 : 0.35;
+    lamps.setNight(t === "dark");
   }
   applyTheme(theme);
 
@@ -392,8 +397,8 @@ export function init3D(container, { data, buildings, onSelect, theme = "light" }
     const tgt = selected && bInfo.get(selected)?.name;
     $ui('[data-a="respawn"]').textContent = `↺ 리스폰${tgt ? " · " + tgt : " · 정문"}`;
     hint.innerHTML = touch
-      ? "화면을 끌어 둘러보고 버튼으로 이동 · 건물을 보고 탭하면 정보"
-      : `클릭 → 마우스로 둘러보기 · <b>WASD</b> 이동 · <b>+ / −</b> 속도 · <b>Space 두 번</b> ${me.flying ? "비행 끝(떨어짐)" : "비행"} · ${me.flying ? "<b>Space</b> 위로 · <b>C</b> 아래로 · " : "<b>Space</b> 점프 · "}<b>R</b> 리스폰 · <b>Esc</b> 나가기`;
+      ? "화면을 끌어 둘러보고 버튼으로 이동 · 건물을 보고 탭하면 정보 · 안내원 앞에서 대화 버튼"
+      : `클릭 → 마우스로 둘러보기 · <b>WASD</b> 이동 · <b>+ / −</b> 속도 · <b>Space 두 번</b> ${me.flying ? "비행 끝(떨어짐)" : "비행"} · ${me.flying ? "<b>Space</b> 위로 · <b>C</b> 아래로 · " : "<b>Space</b> 점프 · "}<b>E</b> 안내원과 대화 · <b>T</b> AI 요정과 대화 · <b>G</b> 길안내 화살표 · <b>R</b> 리스폰 · <b>Esc</b> 나가기`;
   }
   function setLevel(n) { me.level = Math.max(1, Math.min(5, n)); updateHud(); flash(`속도 ${me.level}단계 · ${speed()} m/s`); }
   function setFly(on) {
@@ -452,10 +457,17 @@ export function init3D(container, { data, buildings, onSelect, theme = "light" }
     Object.keys(keys).forEach((k) => (keys[k] = false));
     controls.enabled = true;
     labels.forEach((l) => l.el.classList.remove("walk"));
+    npc.closeChat();
     cross.hidden = true; pad.hidden = true; hud.hidden = true; caption.hidden = true;
     $ui('[data-a="walk"]').textContent = "🚶 걸어서 보기";
     resetView();
   }
+  // ---------- 건물 안내 NPC (E키로 대화, 5공 앞은 AI 채팅) ----------
+  const npc = initNPCs({
+    scene, camera, container, byId, bInfo, roadSegs, inSolid, inBounds, me, getMode: () => mode,
+    onOpenChat() { if (document.pointerLockElement) document.exitPointerLock(); Object.keys(keys).forEach((k) => (keys[k] = false)); },
+    onTarget(id) { highlight(id); }, // 길안내 목적지: 빨간 표시 + R키 리스폰 위치
+  });
   function lookingAt() {
     ray.setFromCamera(new THREE.Vector2(0, 0), camera);
     const hit = ray.intersectObjects(meshes, false)[0];
@@ -498,6 +510,9 @@ export function init3D(container, { data, buildings, onSelect, theme = "light" }
     if (e.key === "+" || e.key === "=" || e.code === "NumpadAdd") { setLevel(me.level + 1); e.preventDefault(); }
     if (e.key === "-" || e.key === "_" || e.code === "NumpadSubtract") { setLevel(me.level - 1); e.preventDefault(); }
     if (e.code === "KeyR" && !e.repeat) respawn();
+    if (e.code === "KeyE" && !e.repeat) npc.interact();
+    if (e.code === "KeyT" && !e.repeat) { npc.talkAI(); e.preventDefault(); }
+    if (e.code === "KeyG" && !e.repeat && npc.toggleArrow()) flash(npc.guide.on ? "🧭 길안내 화살표 켬" : "길안내 화살표 끔 (G로 다시 켜기)");
     if (e.code === "Escape" && !document.pointerLockElement) stopWalk();
   };
   document.addEventListener("keydown", onKey(true));
@@ -574,6 +589,8 @@ export function init3D(container, { data, buildings, onSelect, theme = "light" }
       controls.target.x = Math.max(bMinX, Math.min(bMaxX, controls.target.x));
       controls.target.z = Math.max(bMinZ, Math.min(bMaxZ, controls.target.z));
     }
+    npc.update(dt, now);
+    lamps.update(mode === "walk" ? camera.position : controls.target, now);
     renderer.render(scene, camera);
     placeLabels();
   }
@@ -610,13 +627,13 @@ export function init3D(container, { data, buildings, onSelect, theme = "light" }
 
   return {
     // 디버그·테스트용: 애니메이션 없이 한 번 그리기 (탭이 백그라운드일 때 확인용)
-    renderOnce(dt = 0) { if (anim) anim(performance.now() + 5000); if (mode === "orbit") controls.update(); else stepWalk(dt); renderer.render(scene, camera); placeLabels(); },
+    renderOnce(dt = 0) { if (anim) anim(performance.now() + 5000); if (mode === "orbit") controls.update(); else stepWalk(dt); npc.update(dt || 0.016, performance.now()); renderer.render(scene, camera); placeLabels(); },
     // 건물 선택: 둘러보기면 그쪽으로 이동, 걷기 중이면 리스폰 위치만 바꿈
     focus(id) { highlight(id); if (mode === "walk") flash(`리스폰 위치: ${bInfo.get(id)?.name || ""} (R)`); else flyTo(id); },
     setTarget(id) { highlight(id); },
     setTheme: applyTheme,
     pause() { running = false; if (mode === "walk") stopWalk(); },
     resume() { if (!running) { running = true; clock.getDelta(); requestAnimationFrame(frame); } },
-    _debug: { changed: built.changed, me, keys, startWalk, stopWalk, respawn, setLevel, setFly, inBounds, get mode() { return mode; }, trees: treeSpots.length },
+    _debug: { npc, look, changed: built.changed, me, keys, startWalk, stopWalk, respawn, setLevel, setFly, inBounds, get mode() { return mode; }, trees: treeSpots.length },
   };
 }

@@ -110,7 +110,7 @@ async function pool(items, n, fn) {
 }
 
 /* ---------------- 정리 (AI) ---------------- */
-const MODELS = [...new Set([process.env.GEMINI_MODEL, "gemini-3.5-flash", "gemini-3.1-flash-lite", "gemini-3.8-flash", "gemini-flash-latest", "gemini-flash-lite-latest"].filter(Boolean))];
+const MODELS = [...new Set(["gemini-3.8-flash", process.env.GEMINI_MODEL, "gemini-3.5-flash", "gemini-3.1-flash-lite", "gemini-flash-latest", "gemini-flash-lite-latest"].filter(Boolean))];
 let okModel = null;
 
 async function gemini(prompt) {

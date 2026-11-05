@@ -880,7 +880,7 @@ async function init3DView() {
   const box = $("#view3d");
   box.innerHTML = `<div class="v3d-loading">3D 캠퍼스 불러오는 중…</div>`;
   try {
-    const [mod, data] = await Promise.all([import("./three-view.js?v=33"), fetch("data/campus3d.json").then((r) => r.json())]);
+    const [mod, data] = await Promise.all([import("./three-view.js?v=38"), fetch("data/campus3d.json").then((r) => r.json())]);
     box.innerHTML = "";
     S.three = mod.init3D(box, {
       data, buildings: S.buildings, theme: currentTheme(),

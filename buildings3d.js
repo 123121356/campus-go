@@ -6,6 +6,7 @@ import { buildEng5 } from "./eng5-model.js?v=31";
 import { buildEng3 } from "./eng3-model.js?v=31";
 import { buildGang } from "./gang-model.js?v=32";
 import { buildGre } from "./gre-model.js?v=33";
+import { buildEng1, buildEng2 } from "./eng12-model.js?v=34";
 
 /* ---------- 외벽 텍스처 (한 칸 = 창 1개 폭 × 1개 층) ---------- */
 const PAL = {
@@ -92,7 +93,7 @@ export const SPEC = {
   n127: { wall: "cream_panel", roof: 0x9aa3ad, fx: ["parapet", "curtain", "canopyOrange"], note: "베이지 패널·파란 유리 커튼월·주황 현관" },
 };
 // 전용 모델이 있는 건물 (윤곽에 맞춰 늘려 세움)
-const CUSTOM = { n120: buildEng5, n115: buildEng3, n103: buildGang, n126: buildGre };
+const CUSTOM = { n120: buildEng5, n115: buildEng3, n103: buildGang, n126: buildGre, n121: buildEng1, n122: buildEng2 };
 // 윤곽이 없는 지점은 사진을 참고한 소형 모델
 export const POINT_MODELS = { n114: "gateArch", n107: "gatePosts", n113: "booth", n106: "booth", n108: "amphi" };
 

@@ -40,8 +40,8 @@ const TOOLS = [{ functionDeclarations: [
   T("get_meals", "학식(제5공학관 학생식당) 안내와 이번 주 공식 식단 링크, 교내 식당·푸드코트·카페 위치, 지금 운영/혼잡 추정, 사용자가 제보한 오늘 메뉴·가격을 돌려준다."),
 ] }];
 
-// 빠른 모델 우선. 혼잡·무료 한도 초과면 다음 모델로 자동 전환 (시연 중에도 끊기지 않게)
-const MODELS = [...new Set(["gemini-3.1-flash-lite", "gemini-3.5-flash", "gemini-3.8-flash", "gemini-flash-lite-latest", "gemini-flash-latest", "gemini-3.7-flash", process.env.GEMINI_MODEL].filter(Boolean))];
+// Gemini 3.8 Flash 우선 (.env 의 GEMINI_MODEL 은 그다음). 혼잡·무료 한도 초과면 다음 모델로 자동 전환 (시연 중에도 끊기지 않게)
+const MODELS = [...new Set(["gemini-3.8-flash", process.env.GEMINI_MODEL, "gemini-3.5-flash", "gemini-3.1-flash-lite", "gemini-flash-latest", "gemini-flash-lite-latest", "gemini-3.7-flash"].filter(Boolean))];
 // dev-server는 요청마다 모듈을 다시 읽으므로 상태는 globalThis에 보관
 const G = (globalThis.__cgAgent ||= { okModel: null, coolUntil: {} });
 
