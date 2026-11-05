@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>캠퍼스GO · 강원대 삼척캠퍼스 AI 비서</title>
+  <meta name="description" content="강원대학교 삼척캠퍼스 AI 비서: 강의실 길안내, 개인 시간표, 학교 공지·장학금·학사일정, 학식·혼잡도, 커뮤니티, 오늘의 대시보드" />
+  <meta name="theme-color" content="#1d4ed8" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css?v=23" />
+  <script type="importmap">
+    { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js", "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/" } }
+  </script>
+  <script>
+    // 첫 화면 깜빡임 방지: 저장된 테마를 CSS보다 먼저 적용
+    try { var t = JSON.parse(localStorage.getItem("cg_theme")); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">GO</span>
+      <div>
+        <strong>캠퍼스GO</strong>
+        <small>강원대 삼척캠퍼스</small>
+      </div>
+    </div>
+    <div class="search">
+      <input id="q" type="search" placeholder="어디를 찾으세요? (예: ATM, 프린터, 5공학관)" autocomplete="off" aria-label="건물 검색" />
+      <ul id="suggest" class="suggest" hidden></ul>
+    </div>
+    <button id="aiBtn" class="ai-btn" aria-label="AI 비서 열기" title="AI 비서 · 오늘의 대시보드"><span class="spark">✦</span><span class="lbl">AI</span></button>
+    <button id="langBtn" class="icon-btn" aria-label="언어 선택" title="언어 선택 (번역)">🌐</button>
+    <button id="themeBtn" class="icon-btn" aria-label="다크 모드로 전환"></button>
+    <button id="locate" class="icon-btn" title="내 위치 (지도 길게 누르기·우클릭으로 직접 지정)" aria-label="내 위치">◎</button>
+  </header>
+
+  <main class="layout">
+    <section class="panel" id="panel">
+      <div class="grip" id="grip" aria-hidden="true"></div>
+      <nav class="tabs" role="tablist">
+        <button role="tab" data-tab="buildings" class="active">건물</button>
+        <button role="tab" data-tab="bus">버스</button>
+        <button class="panel-close" id="panelClose" aria-label="패널 숨기기" title="패널 숨기기">✕</button>
+      </nav>
+
+      <!-- 건물 -->
+      <div class="tab-body" id="tab-buildings">
+        <div class="welcome">
+          <b>처음 오셨나요?</b> 찾는 곳을 누르면 지도에 표시해 드려요.
+          <div class="quickfind" id="quickFind">
+            <button data-q="식당">🍚 식당</button>
+            <button data-q="ATM">🏧 ATM</button>
+            <button data-q="프린터">🖨 프린터·복사</button>
+            <button data-q="편의점">🏪 편의점</button>
+            <button data-q="카페">☕ 카페</button>
+            <button data-q="열람실">📚 공부할 곳</button>
+            <button data-q="기숙사">🏠 기숙사</button>
+            <button data-q="bus">🚌 버스</button>
+          </div>
+          <button class="ghost gate" id="gateBtn">🚪 정문은 어디?</button>
+        </div>
+        <div id="detail" class="detail" hidden></div>
+        <div class="chips" id="cats"></div>
+        <ul id="blist" class="blist"></ul>
+        <div class="editbar">
+          <label class="switch"><input type="checkbox" id="editMode" /> 위치 편집 모드</label>
+          <button id="exportJson" class="ghost" hidden>JSON 내보내기</button>
+          <button id="exportIllo" class="ghost" hidden>조감도 좌표 내보내기</button>
+          <button id="loadOsm" class="ghost">OSM 건물 불러오기</button>
+        </div>
+        <p class="hint" id="osmStatus"></p>
+      </div>
+
+      <!-- 버스 -->
+      <div class="tab-body" id="tab-bus" hidden>
+        <div class="bus-head">
+          <div>
+            <h3 id="stopName">강원대 후문 정류장</h3>
+            <p class="muted" id="busMode"></p>
+          </div>
+          <button id="busRefresh" class="ghost">새로고침</button>
+        </div>
+        <div class="seg" id="busDirs" role="group" aria-label="방향">
+          <button data-dir="donghae" class="on">동해 방면</button>
+          <button data-dir="samcheok">삼척 시내 방면</button>
+        </div>
+        <ul id="arrivals" class="arrivals"></ul>
+        <label class="switch" style="font-size:13px"><input type="checkbox" id="busHoliday" /> 오늘 공휴일이에요 (주말·공휴일 미운행 편 제외)</label>
+        <h4>오늘 전체 시간표 <small class="muted">(후문 도착 추정)</small></h4>
+        <div id="busTable" class="tt-grid"></div>
+        <h4>노선</h4>
+        <ul id="routes" class="routes"></ul>
+        <details id="shuttle" class="shuttle-box"></details>
+        <p class="hint" id="busSrc"></p>
+      </div>
+
+      <!-- 날씨 -->
+      <div class="tab-body" id="tab-weather" hidden>
+        <div class="bus-head">
+          <div><h3>삼척캠퍼스 날씨</h3><p class="muted">캠퍼스 좌표 기준 예보</p></div>
+          <button id="wxRefresh" class="ghost">새로고침</button>
+        </div>
+        <div id="wxNow"></div>
+        <ul id="wxAdvice" class="wx-advice"></ul>
+        <h4>앞으로 12시간</h4>
+        <div id="wxHours" class="wx-hours"></div>
+        <p class="hint" id="wxSrc"></p>
+      </div>
+
+    </section>
+
+    <div class="map-wrap">
+      <div class="view-toggle" role="group" aria-label="지도 보기 방식">
+        <button data-view="map" class="on">지도</button>
+        <button data-view="illo">조감도</button>
+        <button data-view="3d">3D</button>
+      </div>
+      <button id="wxChip" class="wx-chip" hidden aria-label="비 예보"></button>
+      <button id="panelOpen" class="panel-open" hidden>☰ 목록</button>
+      <div id="pinBar" class="mapbar" hidden><span></span><button aria-label="표시 지우기">✕</button></div>
+      <div id="routeBar" class="mapbar route" hidden><span></span><button id="routeFrom" class="from">출발지 바꾸기</button><button class="x" aria-label="경로 지우기">✕</button></div>
+      <div id="pickBar" class="mapbar pick" hidden><span></span><button aria-label="취소">✕</button></div>
+      <div id="map" class="map" role="region" aria-label="캠퍼스 지도"></div>
+      <div id="illo" class="map illo" role="region" aria-label="캠퍼스 조감도" hidden></div>
+      <div id="view3d" class="map view3d" role="region" aria-label="3D 캠퍼스" hidden></div>
+    </div>
+  </main>
+
+
+  <!-- ================= AI 비서 전용 화면 (✦AI 버튼) ================= -->
+  <section id="aiView" class="aiview" hidden aria-label="캠퍼스GO AI">
+    <nav class="av-nav" aria-label="AI 메뉴">
+      <div class="av-brand"><span class="spark">✦</span><b>캠퍼스GO AI</b><small>삼척캠퍼스 AI 비서</small></div>
+      <button data-page="home" class="on">🏠 <span>오늘</span></button>
+      <button data-page="chat" class="mob-only">💬 <span>대화</span></button>
+      <button data-page="tt">🗓 <span>내 시간표</span></button>
+      <button data-page="comm">👥 <span>커뮤니티·제보</span></button>
+      <button id="avMap" class="av-map">🗺 <span>캠퍼스 지도</span></button>
+    </nav>
+    <main class="av-main">
+      <div class="av-page" id="avHome">
+        <div class="av-hero">
+          <div class="av-greet" id="avGreet"></div>
+          <h1>무엇을 도와드릴까요?</h1>
+          <form id="heroForm" class="hero-form">
+            <input id="heroIn" placeholder="예: 10분 뒤 301호 수업이야, 어디로 가야 해?" autocomplete="off" maxlength="500" />
+            <button type="submit" aria-label="보내기">➜</button>
+          </form>
+          <div class="hero-chips">
+            <button data-ask="10분 뒤 301호 수업이야. 어디로 가야 해?">🧭 강의실 길안내</button>
+            <button data-ask="오늘 공강 2시간인데 뭐 하지?">☕ 공강 추천</button>
+            <button data-ask="지금 밥 먹을 만한 곳 어디야?">🍚 지금 밥 먹을 곳</button>
+            <button data-ask="내가 이번 학기에 신청할 수 있는 장학금 있어?">🎓 장학금</button>
+            <button data-ask="계절학기 수강신청이랑 학점교류 일정 알려줘">📅 학사일정</button>
+            <button data-ask="최근 삼척캠퍼스 공지 요약해줘">📢 공지 요약</button>
+            <button data-ask="도서관 지금 붐벼?">📊 혼잡도</button>
+            <button data-ask="도서관에서 검은 지갑 잃어버렸어. 분실물 올려줘">🔎 분실물 올리기</button>
+          </div>
+        </div>
+        <div id="dash" class="av-grid"></div>
+      </div>
+      <!-- 시간표 -->
+      <div class="av-page" id="avTT" hidden>
+        <div class="bus-head"><div><h3>내 시간표</h3><p class="muted">다음 수업·이동 시간을 AI가 계산해요 (이 기기에만 저장)</p></div><button id="ttPhoto" class="ghost">📷 사진으로 등록</button></div>
+        <div id="ttList" class="ttlist"></div>
+        <form id="ttForm" class="form">
+          <input name="name" placeholder="과목명" required maxlength="40" />
+          <div class="row2">
+            <select name="day"><option>월</option><option>화</option><option>수</option><option>목</option><option>금</option><option>토</option></select>
+            <input name="start" type="time" value="09:00" required />
+            <input name="end" type="time" value="10:15" />
+          </div>
+          <div class="row2"><select name="place" id="ttPlace"></select><input name="room" placeholder="호실 (예: 301)" maxlength="6" /></div>
+          <button class="primary">＋ 수업 추가</button>
+        </form>
+        <button id="ttClear" class="ghost small">시간표 전체 지우기</button>
+      </div>
+
+      <!-- 커뮤니티 + 실시간 제보 -->
+      <div class="av-page" id="avComm" hidden>
+        <h3 style="margin:0 0 4px">📊 실시간 현황 제보</h3>
+        <p class="muted" style="margin:0 0 8px;font-size:12px">센서 데이터가 없는 곳은 여러분의 제보로 채워요. 제보와 추정은 구분해서 보여 줘요.</p>
+        <form id="repForm" class="form inline">
+          <select name="place"><option>학생식당(5공학관)</option><option>푸드코트(학생회관)</option><option>도서관 열람실</option><option>도서관 PC·프린터</option><option>후문 버스정류장</option><option>통학버스</option><option>헬스장</option><option>카페</option></select>
+          <select name="level"><option>여유</option><option selected>보통</option><option>혼잡</option></select>
+          <input name="note" placeholder="한 줄 메모 (선택)" maxlength="80" />
+          <button class="primary">제보</button>
+        </form>
+        <ul id="repList" class="replist"></ul>
+        <h3 style="margin:16px 0 6px">💬 캠퍼스 커뮤니티</h3>
+        <div id="commTypes" class="chips"></div>
+        <form id="commForm" class="form">
+          <div class="row2"><select name="type"><option>분실물</option><option>중고거래</option><option>팀원모집</option><option>동아리·행사</option><option>주변정보</option><option>학식메뉴</option></select><input name="title" placeholder="제목" required maxlength="60" /></div>
+          <textarea name="body" rows="2" placeholder="내용 (전화번호 등 개인정보는 적지 마세요)" maxlength="400"></textarea>
+          <button class="primary">글 올리기</button>
+        </form>
+        <ul id="commList" class="posts"></ul>
+      </div>
+
+    </main>
+    <section class="av-chat" id="avChat" aria-label="AI 대화">
+      <header class="av-chat-head"><span class="spark">✦</span><b>AI 대화</b><small id="aiMode"></small></header>
+      <div id="msgs" class="msgs">
+        <div class="msg bot">안녕하세요! 강의실 찾기, 시간표, 장학금·학사일정, 학식, 버스, 분실물까지 물어보세요. 제가 직접 데이터를 찾아보고 필요하면 지도에도 표시해 드려요.<br/><span class="muted">English is OK too.</span></div>
+      </div>
+      <div id="attach" class="attach" hidden><img alt="첨부 미리보기" /><span>사진 첨부됨 (시간표 사진이면 자동 등록)</span><button type="button" aria-label="첨부 취소">✕</button></div>
+      <form id="chatForm" class="chat-form">
+        <button type="button" id="attachBtn" class="clip" aria-label="사진 첨부" title="시간표 사진 등 첨부">📷</button>
+        <input id="aiFile" type="file" accept="image/*" hidden />
+        <input id="chatIn" placeholder="무엇이든 물어보세요" autocomplete="off" maxlength="500" />
+        <button type="submit">보내기</button>
+      </form>
+    </section>
+  </section>
+
+  <!-- 건물 내부: 층별 사진 뷰어 -->
+  <div id="viewer" class="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="vTitle">
+    <div class="v-box">
+      <header class="v-head">
+        <h3 id="vTitle"></h3>
+        <button id="vClose" class="icon-btn" aria-label="닫기">✕</button>
+      </header>
+      <div class="v-body">
+        <aside class="v-side">
+          <div id="vStack" class="stack" aria-label="층 선택"></div>
+          <p class="hint">층을 눌러 보세요 · ↑↓ 층 이동, ←→ 사진 넘기기</p>
+        </aside>
+        <section class="v-main">
+          <nav id="vFloors" class="v-floors"></nav>
+          <div class="v-floor-name" id="vFloorName"></div>
+          <div class="v-stage" id="vStage">
+            <img id="vImg" alt="" />
+            <div id="vEmpty" class="v-empty" hidden>이 층은 사진 준비 중이에요</div>
+            <button id="vPrev" class="v-nav prev" aria-label="이전 사진">‹</button>
+            <button id="vNext" class="v-nav next" aria-label="다음 사진">›</button>
+            <span id="vCount" class="v-count"></span>
+          </div>
+          <div class="v-cap" id="vCap"></div>
+          <div id="vThumbs" class="v-thumbs"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="translate.js?v=1"></script>
+  <script src="app.js?v=33" type="module"></script>
+</body>
+</html>

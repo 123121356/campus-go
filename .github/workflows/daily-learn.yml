@@ -1,0 +1,45 @@
+# 매일 아침 6시(한국 시간)에 강원대 홈페이지를 읽고 AI가 정리해 data/ 에 커밋합니다.
+# 커밋되면 Vercel 이 자동으로 다시 배포하므로, 앱의 AI 도우미가 그날 공지를 바로 알게 됩니다.
+# 준비: GitHub 저장소 → Settings → Secrets and variables → Actions → New repository secret
+#        이름 GEMINI_API_KEY, 값은 .env 에 있는 키
+# 수동 실행: 저장소 → Actions → "매일 학교 공지 학습" → Run workflow
+name: 매일 학교 공지 학습
+
+on:
+  schedule:
+    - cron: "0 21 * * *" # UTC 21:00 = 한국 06:00
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: "게시판마다 읽을 쪽 수 (처음엔 10 추천)"
+        default: "3"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-learn
+  cancel-in-progress: false
+
+jobs:
+  learn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 수집 → AI 정리 → 누적
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node tools/learn-school.mjs --pages=${{ github.event.inputs.pages || '3' }}
+      - name: 바뀐 데이터 커밋
+        run: |
+          git config user.name "campusgo-bot"
+          git config user.email "campusgo-bot@users.noreply.github.com"
+          git add data/knowledge.json data/school.json data/learn-log.json
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "매일 학습: $(TZ=Asia/Seoul date +%F) 학교 공지 업데이트"
+          git pull --rebase origin main
+          git push origin HEAD:main

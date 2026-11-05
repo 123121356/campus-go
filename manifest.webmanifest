@@ -1,0 +1,9 @@
+{
+  "name": "캠퍼스GO · 강원대 삼척캠퍼스",
+  "short_name": "캠퍼스GO",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f8ff",
+  "theme_color": "#1d4ed8",
+  "lang": "ko"
+}

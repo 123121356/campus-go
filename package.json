@@ -1,0 +1,11 @@
+{
+  "name": "campus-go",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "강원대 삼척캠퍼스 지도·건물·버스 안내 + AI 도우미 (KNU AI 해커톤 Zero to One)",
+  "scripts": {
+    "dev": "node dev-server.js"
+  },
+  "engines": { "node": ">=18" }
+}

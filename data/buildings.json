@@ -1,0 +1,1018 @@
+{
+  "_note": "건물 이름·번호·좌표는 강원대학교 공식 캠퍼스맵 데이터(kangwon.ac.kr/campusmap, 삼척캠퍼스)에서 가져왔습니다(2026-11-05). 용도 설명(desc)과 시설(facilities)은 팀이 현장 확인 후 보강하세요. 학과·층수·시설 설명은 나무위키(2026-11-05 열람) 기준이며 현장 확인을 권장합니다.",
+  "source": {
+    "title": "강원대학교 캠퍼스맵 (삼척캠퍼스)",
+    "url": "https://kangwon.ac.kr/campusmap/index.do",
+    "fetchedAt": "2026-11-05"
+  },
+  "campus": {
+    "name": "강원대학교 삼척캠퍼스",
+    "address": "강원특별자치도 삼척시 중앙로 346 (교동 777)",
+    "center": [
+      37.453974,
+      129.162362
+    ],
+    "zoom": 17
+  },
+  "buildings": [
+    {
+      "id": "n101",
+      "no": "101",
+      "name": "대학본부",
+      "aliases": [
+        "본관",
+        "본부",
+        "행정동"
+      ],
+      "category": "행정",
+      "lat": 37.4521882,
+      "lng": 129.1619257,
+      "facilities": [
+        "행정"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=18761527.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 3층, 지하 1층",
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "행정 부서(대학본부)"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n102",
+      "no": "102",
+      "name": "전산정보원",
+      "aliases": [
+        "전산원"
+      ],
+      "category": "행정",
+      "lat": 37.4526053,
+      "lng": 129.1617795,
+      "facilities": [
+        "정보화본부",
+        "전산 실습실"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=130104748.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 3층, 지하 1층",
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "정보화본부",
+            "컴퓨터 실습실"
+          ]
+        },
+        {
+          "label": "용도",
+          "items": [
+            "학생증 열람실 출입 등록"
+          ]
+        }
+      ],
+      "keywords": [
+        "PC",
+        "컴퓨터"
+      ]
+    },
+    {
+      "id": "n103",
+      "no": "103",
+      "name": "강의동",
+      "aliases": [],
+      "category": "강의",
+      "lat": 37.4530977,
+      "lng": 129.1624378,
+      "facilities": [
+        "교양 강의실"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=282737963.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 3층, 지하 1층",
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "교양 강의실"
+          ]
+        },
+        {
+          "label": "학과",
+          "items": [
+            "유아교육과",
+            "관광전공"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n104",
+      "no": "104",
+      "name": "도서관",
+      "aliases": [
+        "CU",
+        "열람실",
+        "중앙도서관"
+      ],
+      "category": "편의",
+      "lat": 37.4541807,
+      "lng": 129.1623334,
+      "facilities": [
+        "열람실",
+        "PC·프린터",
+        "그룹 스터디룸",
+        "CU 편의점(옆)"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=665655246.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 4층, 지하 1층",
+      "inside": [
+        {
+          "label": "1층",
+          "items": [
+            "PC",
+            "프린터",
+            "열람실",
+            "휴라이브러리"
+          ]
+        },
+        {
+          "label": "2~3층",
+          "items": [
+            "자료실(책)"
+          ]
+        },
+        {
+          "label": "4층",
+          "items": [
+            "그룹 스터디룸"
+          ]
+        },
+        {
+          "label": "옆",
+          "items": [
+            "CU 편의점",
+            "휴게실",
+            "자판기"
+          ]
+        },
+        {
+          "label": "참고",
+          "items": [
+            "외부인 출입 제한"
+          ]
+        }
+      ],
+      "keywords": [
+        "프린터",
+        "PC",
+        "열람실",
+        "편의점",
+        "CU",
+        "자판기",
+        "스터디룸"
+      ]
+    },
+    {
+      "id": "n105",
+      "no": "105",
+      "name": "조형관",
+      "aliases": [],
+      "category": "강의",
+      "lat": 37.4548175,
+      "lng": 129.1634704,
+      "facilities": [
+        "디자인 실습실"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=35339405.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 6층, 지하 1층",
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "디자인 실습실",
+            "작품 전시"
+          ]
+        },
+        {
+          "label": "학과",
+          "items": [
+            "멀티디자인학과",
+            "생활조형디자인학과"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n106",
+      "no": "106",
+      "name": "동문안내실",
+      "aliases": [],
+      "category": "출입",
+      "lat": 37.4545349,
+      "lng": 129.1658635,
+      "facilities": [],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=182931176.jpg&path=/extn/bldng/",
+      "verified": true,
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "동문 안내실"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n107",
+      "no": "107",
+      "name": "동문",
+      "aliases": [
+        "동쪽문"
+      ],
+      "category": "출입",
+      "lat": 37.4544705,
+      "lng": 129.1661837,
+      "facilities": [
+        "출입구"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=112029277.jpg&path=/extn/bldng/",
+      "verified": true,
+      "inside": [
+        {
+          "label": "출입",
+          "items": [
+            "캠퍼스 동쪽 출입문"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n108",
+      "no": "108",
+      "name": "야외음악당",
+      "aliases": [],
+      "category": "체육",
+      "lat": 37.4534471,
+      "lng": 129.1669678,
+      "facilities": [
+        "공연장",
+        "테니스장(옆)"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=517238410.jpg&path=/extn/bldng/",
+      "verified": true,
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "야외 공연 무대"
+          ]
+        },
+        {
+          "label": "옆",
+          "items": [
+            "테니스장"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n109",
+      "no": "109",
+      "name": "제2학생회관",
+      "aliases": [
+        "2학관",
+        "제2학관"
+      ],
+      "category": "편의",
+      "lat": 37.4528345,
+      "lng": 129.1659896,
+      "facilities": [
+        "ROTC",
+        "동아리방",
+        "풋살장(옆)"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=66183592.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 4층, 지하 1층",
+      "inside": [
+        {
+          "label": "1~2층",
+          "items": [
+            "학군단(ROTC)"
+          ]
+        },
+        {
+          "label": "3~4층",
+          "items": [
+            "동아리방"
+          ]
+        },
+        {
+          "label": "옆",
+          "items": [
+            "풋살장",
+            "테니스장"
+          ]
+        }
+      ],
+      "keywords": [
+        "ROTC",
+        "학군단",
+        "동아리"
+      ]
+    },
+    {
+      "id": "n110",
+      "no": "110",
+      "name": "체육관",
+      "aliases": [],
+      "category": "체육",
+      "lat": 37.4531481,
+      "lng": 129.1655919,
+      "facilities": [
+        "실내 코트",
+        "행사장"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=311136464.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 2층",
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "실내 코트",
+            "입학식",
+            "졸업식 행사장"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n111",
+      "no": "111",
+      "name": "생활체육관",
+      "aliases": [],
+      "category": "체육",
+      "lat": 37.4527084,
+      "lng": 129.1650029,
+      "facilities": [],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=52321467.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 1층",
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "실내 체육시설"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n112",
+      "no": "112",
+      "name": "학생회관",
+      "aliases": [
+        "매점",
+        "식당",
+        "푸드코트",
+        "학관",
+        "학생식당"
+      ],
+      "category": "편의",
+      "lat": 37.4526071,
+      "lng": 129.1641412,
+      "facilities": [
+        "푸드코트",
+        "문구점",
+        "복사실",
+        "우편취급국",
+        "서점",
+        "ATM"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=166545844.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 4층",
+      "inside": [
+        {
+          "label": "시설",
+          "items": [
+            "푸드코트",
+            "문구점",
+            "복사실",
+            "서점",
+            "미용실"
+          ]
+        },
+        {
+          "label": "편의",
+          "items": [
+            "ATM(농협",
+            "국민",
+            "우체국",
+            "신한)",
+            "우편취급국"
+          ]
+        },
+        {
+          "label": "학생",
+          "items": [
+            "총학생회실",
+            "동아리방",
+            "강대신문",
+            "체력인증센터"
+          ]
+        },
+        {
+          "label": "4층",
+          "items": [
+            "메타버스 체험관"
+          ]
+        }
+      ],
+      "keywords": [
+        "ATM",
+        "식당",
+        "푸드코트",
+        "복사실",
+        "프린터",
+        "문구점",
+        "서점",
+        "우체국",
+        "미용실"
+      ]
+    },
+    {
+      "id": "n113",
+      "no": "113",
+      "name": "정문안내실",
+      "aliases": [],
+      "category": "출입",
+      "lat": 37.4515541,
+      "lng": 129.1616249,
+      "facilities": [],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=635939851.jpg&path=/extn/bldng/",
+      "verified": true,
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "정문 안내실"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n114",
+      "no": "114",
+      "name": "정문",
+      "aliases": [
+        "입구",
+        "학교 입구"
+      ],
+      "category": "출입",
+      "lat": 37.4508961,
+      "lng": 129.1616512,
+      "facilities": [
+        "출입구"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=298641939.jpg&path=/extn/bldng/",
+      "verified": true,
+      "inside": [
+        {
+          "label": "출입",
+          "items": [
+            "캠퍼스 정문",
+            "처음 오면 여기서 출발"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n115",
+      "no": "115",
+      "name": "제3공학관",
+      "aliases": [
+        "3공",
+        "3공학관"
+      ],
+      "category": "강의",
+      "lat": 37.4519993,
+      "lng": 129.1609259,
+      "facilities": [
+        "강의실"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=462613607.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 4층, 지하 1층",
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "강의실",
+            "실험실"
+          ]
+        },
+        {
+          "label": "학과",
+          "items": [
+            "도시건축학과",
+            "미래토목건설공학과",
+            "그린에너지공학과"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n116",
+      "no": "116",
+      "name": "언장관",
+      "aliases": [
+        "기숙사",
+        "긱사",
+        "생활관"
+      ],
+      "category": "생활",
+      "lat": 37.4511035,
+      "lng": 129.1596685,
+      "facilities": [
+        "기숙사"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=256473773.jpg&path=/extn/bldng/",
+      "verified": true,
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "기숙사(남학생",
+            "2인실)"
+          ]
+        },
+        {
+          "label": "공용",
+          "items": [
+            "휴게 라운지",
+            "공용 주방",
+            "스터디 공간"
+          ]
+        },
+        {
+          "label": "참고",
+          "items": [
+            "외부인 출입 제한"
+          ]
+        }
+      ],
+      "keywords": [
+        "주방",
+        "스터디"
+      ]
+    },
+    {
+      "id": "n117",
+      "no": "117",
+      "name": "창업보육센터",
+      "aliases": [],
+      "category": "행정",
+      "lat": 37.451405,
+      "lng": 129.1589427,
+      "facilities": [],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=490729739.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 3층",
+      "inside": [
+        {
+          "label": "본관",
+          "items": [
+            "창업 입주기업 사무실"
+          ]
+        },
+        {
+          "label": "별관 1층",
+          "items": [
+            "행정실",
+            "창업준비실"
+          ]
+        },
+        {
+          "label": "별관 2층",
+          "items": [
+            "입주기업 사무실"
+          ]
+        },
+        {
+          "label": "별관 3층",
+          "items": [
+            "세미나실",
+            "회의실"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n118",
+      "no": "118",
+      "name": "제4공학관",
+      "aliases": [
+        "4공",
+        "4공학관"
+      ],
+      "category": "강의",
+      "lat": 37.4519834,
+      "lng": 129.1593322,
+      "facilities": [
+        "강의실"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=331224953.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 4층, 지하 1층",
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "강의실",
+            "실험실"
+          ]
+        },
+        {
+          "label": "학과",
+          "items": [
+            "그린에너지공학과"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n119",
+      "no": "119",
+      "name": "인문사회과학관",
+      "aliases": [
+        "인사관"
+      ],
+      "category": "강의",
+      "lat": 37.4524251,
+      "lng": 129.1588251,
+      "facilities": [
+        "역사자료실",
+        "토익 시험장"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=109644972.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 6층, 지하 1층",
+      "inside": [
+        {
+          "label": "1층",
+          "items": [
+            "역사자료실"
+          ]
+        },
+        {
+          "label": "시험",
+          "items": [
+            "토익 시험장"
+          ]
+        },
+        {
+          "label": "학과",
+          "items": [
+            "공공행정",
+            "영어",
+            "경제금융",
+            "휴먼스포츠",
+            "사회복지"
+          ]
+        }
+      ],
+      "keywords": [
+        "토익"
+      ]
+    },
+    {
+      "id": "n120",
+      "no": "120",
+      "name": "제5공학관",
+      "aliases": [
+        "5공",
+        "5공학관",
+        "오공",
+        "편의점",
+        "학생식당",
+        "학식",
+        "해커톤 장소"
+      ],
+      "category": "강의",
+      "lat": 37.4530387,
+      "lng": 129.1592608,
+      "facilities": [
+        "학생식당",
+        "편의점",
+        "ATM",
+        "강의실"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=47512087.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 6층, 지하 1층",
+      "inside": [
+        {
+          "label": "1층",
+          "items": [
+            "학생식당",
+            "편의점",
+            "ATM(농협)"
+          ]
+        },
+        {
+          "label": "2~5층",
+          "items": [
+            "강의실",
+            "실습실"
+          ]
+        },
+        {
+          "label": "6층",
+          "items": [
+            "시험장"
+          ]
+        },
+        {
+          "label": "학과",
+          "items": [
+            "첨단AI공학과",
+            "전기공학과"
+          ]
+        }
+      ],
+      "keywords": [
+        "식당",
+        "학식",
+        "편의점",
+        "ATM"
+      ]
+    },
+    {
+      "id": "n121",
+      "no": "121",
+      "name": "제1공학관",
+      "aliases": [
+        "1공",
+        "1공학관"
+      ],
+      "category": "강의",
+      "lat": 37.452886,
+      "lng": 129.1607141,
+      "facilities": [
+        "강의실"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=151049433.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 3층, 지하 1층",
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "강의실",
+            "실습실"
+          ]
+        },
+        {
+          "label": "학과",
+          "items": [
+            "기계공학과"
+          ]
+        },
+        {
+          "label": "연결",
+          "items": [
+            "제2공학관과 연결"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n122",
+      "no": "122",
+      "name": "제2공학관",
+      "aliases": [
+        "2공",
+        "2공학관"
+      ],
+      "category": "강의",
+      "lat": 37.4536173,
+      "lng": 129.1611194,
+      "facilities": [
+        "공학대학 행정실"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=75799698.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 3층",
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "공학대학 행정실",
+            "대학원 사무실"
+          ]
+        },
+        {
+          "label": "연결",
+          "items": [
+            "도서관 가는 계단"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n123",
+      "no": "123",
+      "name": "공동실험실습관",
+      "aliases": [],
+      "category": "강의",
+      "lat": 37.4536261,
+      "lng": 129.1601478,
+      "facilities": [
+        "실험실"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=209978936.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 4층, 지하 1층",
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "공학 실험실",
+            "실습실"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n124",
+      "no": "124",
+      "name": "해솔관",
+      "aliases": [
+        "기숙사",
+        "긱사",
+        "생활관"
+      ],
+      "category": "생활",
+      "lat": 37.4538573,
+      "lng": 129.1588324,
+      "facilities": [
+        "기숙사"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=95263122.jpg&path=/extn/bldng/",
+      "verified": true,
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "기숙사(남녀공용",
+            "2인실)"
+          ]
+        },
+        {
+          "label": "공용",
+          "items": [
+            "세탁실",
+            "공용 주방",
+            "헬스장",
+            "휴게 공간"
+          ]
+        },
+        {
+          "label": "참고",
+          "items": [
+            "외부인 출입 제한"
+          ]
+        }
+      ],
+      "keywords": [
+        "세탁실",
+        "헬스장"
+      ]
+    },
+    {
+      "id": "n125",
+      "no": "125",
+      "name": "두타관",
+      "aliases": [
+        "기숙사",
+        "긱사",
+        "생활관"
+      ],
+      "category": "생활",
+      "lat": 37.454637,
+      "lng": 129.158561,
+      "facilities": [
+        "기숙사"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=138394996.jpg&path=/extn/bldng/",
+      "verified": true,
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "기숙사(남녀공용",
+            "1호실 3방 6인)"
+          ]
+        },
+        {
+          "label": "참고",
+          "items": [
+            "외부인 출입 제한"
+          ]
+        }
+      ],
+      "keywords": []
+    },
+    {
+      "id": "n126",
+      "no": "126",
+      "name": "그린에너지 연구관",
+      "aliases": [
+        "그린에너지연구관",
+        "카페"
+      ],
+      "category": "강의",
+      "lat": 37.4518372,
+      "lng": 129.1624015,
+      "facilities": [
+        "입학본부",
+        "교육지원처",
+        "10층 카페"
+      ],
+      "photo": "https://kangwon.ac.kr/neibis/cmmn/imgfile.do?dn=20260313015346887.jpg&path=/extn/bldng/",
+      "verified": true,
+      "floorsText": "지상 10층",
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "입학본부",
+            "교육지원처",
+            "강의실"
+          ]
+        },
+        {
+          "label": "10층",
+          "items": [
+            "바다가 보이는 카페"
+          ]
+        }
+      ],
+      "keywords": [
+        "카페"
+      ]
+    },
+    {
+      "id": "n127",
+      "no": "127",
+      "name": "복합 스포츠센터",
+      "aliases": [
+        "복합스포츠센터"
+      ],
+      "category": "체육",
+      "lat": 37.4536895,
+      "lng": 129.1655397,
+      "facilities": [],
+      "photo": "",
+      "verified": true,
+      "inside": [
+        {
+          "label": "건물",
+          "items": [
+            "헬스장",
+            "실내 트랙",
+            "라운지"
+          ]
+        }
+      ],
+      "keywords": [
+        "헬스장",
+        "운동"
+      ]
+    }
+  ]
+}
