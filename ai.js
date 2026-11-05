@@ -32,7 +32,42 @@ const D = {
   busy: false,
   mode: "",      // "gemini" | "local"
 };
-const save = () => { store.set("cg_tt", D.tt); store.set("cg_posts", D.posts); store.set("cg_reports", D.reports); };
+const save = () => { store.set("cg_tt", D.tt); if (!D.shared) { store.set("cg_posts", D.posts); store.set("cg_reports", D.reports); } };
+
+/* ================= 커뮤니티·제보 공유 (서버 /api/community) =================
+   서버에 공유 저장소가 연결돼 있으면 모든 사용자가 같은 글·제보를 봄(D.shared=true).
+   없거나 실패하면 예전처럼 이 기기(localStorage)에만 저장. */
+D.shared = false;
+D.me = (() => { let t = store.get("cg_me", ""); if (!/^[a-z0-9]{8,40}$/i.test(t)) { t = Math.random().toString(36).slice(2) + Date.now().toString(36); store.set("cg_me", t); } return t; })();
+async function commApi(body) {
+  const r = await fetch("/api/community", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ me: D.me, ...body }) });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || r.status);
+  return j;
+}
+async function syncComm() {
+  try {
+    const r = await fetch(`/api/community?me=${encodeURIComponent(D.me)}`, { cache: "no-store" });
+    if (!r.ok) throw new Error(r.status);
+    const j = await r.json();
+    if (!j.shared) throw new Error("not shared");
+    if (!D.shared) { // 처음 연결될 때: 이 기기에만 있던 내 글·제보를 서버로 올림
+      D.shared = true;
+      const localPosts = store.get("cg_posts", []), localReps = store.get("cg_reports", []);
+      if (localPosts.length || localReps.length) {
+        for (const p of localPosts.slice(0, 20).reverse()) await commApi({ kind: "post", post: p }).catch(() => {});
+        for (const x of localReps.filter((x) => Date.now() - x.at < 3 * 3600000)) await commApi({ kind: "report", report: x }).catch(() => {});
+        store.set("cg_posts", []); store.set("cg_reports", []);
+        return syncComm();
+      }
+    }
+    D.posts = j.posts || [];
+    D.reports = (j.reports || []).slice().sort((a, b) => a.at - b.at);
+  } catch {
+    D.shared = false;
+  }
+  renderComm(); renderDash();
+}
 
 /* ================= 장소 해석 ================= */
 function floorsOf(b) { const m = String(b.floorsText || "").match(/지상\s*(\d+)/); return m ? +m[1] : 0; }
@@ -249,18 +284,26 @@ const TOOLS = {
 
   async report_status({ place, level, note = "" }) {
     const lv = /혼잡|많|붐/.test(level) ? "혼잡" : /여유|한산|적/.test(level) ? "여유" : "보통";
-    D.reports.push({ place: String(place).slice(0, 30), level: lv, note: String(note).slice(0, 80), at: Date.now() });
+    const rep = { place: String(place).slice(0, 30), level: lv, note: String(note).slice(0, 80), at: Date.now() };
+    D.reports.push(rep);
     D.reports = D.reports.slice(-200); save(); renderDash(); renderComm();
-    return { saved: true, place, level: lv };
+    let sharedOk = false;
+    if (D.shared) { try { await commApi({ kind: "report", report: rep }); sharedOk = true; syncComm(); } catch {} }
+    return { saved: true, place, level: lv, visibleTo: sharedOk ? "모든 사용자" : "이 기기만" };
   },
 
   async community({ action = "list", type = "", title = "", body = "" } = {}) {
     if (action === "post") {
       if (!title && !body) return { error: "제목이나 내용이 필요해요" };
       const p = { id: uid(), type: normType(type || title + body), title: String(title || body).slice(0, 60), body: String(body).slice(0, 400).replace(/01[016789][-\s]?\d{3,4}[-\s]?\d{4}/g, "(번호 가림)"), at: Date.now(), done: false };
-      D.posts.unshift(p); save(); renderComm(); renderDash();
+      let sharedOk = false;
+      if (D.shared) {
+        try { const r = await commApi({ kind: "post", post: p }); D.posts.unshift(r.post); sharedOk = true; syncComm(); }
+        catch { D.posts.unshift(p); }
+      } else D.posts.unshift(p);
+      save(); renderComm(); renderDash();
       act("👥 커뮤니티 보기", () => aiPage("comm"));
-      return { posted: true, type: p.type, title: p.title };
+      return { posted: true, type: p.type, title: p.title, visibleTo: sharedOk ? "모든 사용자" : "이 기기만" };
     }
     const t = type ? normType(type) : "";
     const list = D.posts.filter((p) => !t || p.type === t).slice(0, 10).map((p) => ({ type: p.type, title: p.title, body: p.body.slice(0, 120), ago: agoText(p.at), done: p.done }));
@@ -662,7 +705,7 @@ function renderComm() {
   $("#commTypes").innerHTML = ["", ...TYPES].map((t) => `<button class="chip ${t === commType ? "on" : ""}" data-t="${t}">${t || "전체"}</button>`).join("");
   const list = D.posts.filter((p) => !commType || p.type === commType);
   const ev = commType === "" || commType === "동아리·행사" ? allNotices().filter((n) => n.board === "events").slice(0, 3) : [];
-  el.innerHTML = list.map((p) => `<li class="post ${p.done ? "done" : ""}"><span class="tag">${esc(p.type)}</span><b>${esc(p.title)}</b>${p.body && p.body !== p.title ? `<p>${esc(p.body)}</p>` : ""}<small>${agoText(p.at)} · 이 기기에 저장됨 <button data-done="${p.id}">${p.done ? "다시 열기" : p.type === "분실물" ? "찾았어요" : "완료"}</button> <button data-rm="${p.id}">삭제</button></small></li>`).join("")
+  el.innerHTML = list.map((p) => `<li class="post ${p.done ? "done" : ""}"><span class="tag">${esc(p.type)}</span><b>${esc(p.title)}</b>${p.body && p.body !== p.title ? `<p>${esc(p.body)}</p>` : ""}<small>${agoText(p.at)} · ${D.shared ? (p.mine ? "내 글 · 모두에게 공개" : "모두에게 공개") : "이 기기에 저장됨"}${!D.shared || p.mine ? ` <button data-done="${p.id}">${p.done ? "다시 열기" : p.type === "분실물" ? "찾았어요" : "완료"}</button> <button data-rm="${p.id}">삭제</button>` : ""}</small></li>`).join("")
     + ev.map((n) => `<li class="post official"><span class="tag">학교 행사</span><a href="${esc(n.url)}" target="_blank" rel="noopener"><b>${esc(n.title)}</b></a><small>${esc(n.date)} · 학교 공지</small></li>`).join("")
     || `<li class="muted">아직 글이 없어요. 첫 글을 남겨 보세요. AI에게 "도서관에서 지갑 잃어버렸어 분실물 올려줘"라고 해도 돼요.</li>`;
   const rep = D.reports.filter((r) => Date.now() - r.at < 3 * 3600000).slice(-6).reverse();
@@ -672,14 +715,14 @@ function initComm() {
   $("#commTypes").addEventListener("click", (e) => { if (e.target.dataset.t === undefined) return; commType = e.target.dataset.t; renderComm(); });
   $("#commList").addEventListener("click", (e) => {
     const d = e.target.dataset.done, r = e.target.dataset.rm;
-    if (d) { const p = D.posts.find((x) => x.id === d); if (p) p.done = !p.done; }
-    if (r) D.posts = D.posts.filter((x) => x.id !== r);
+    if (d) { const p = D.posts.find((x) => x.id === d); if (p) { p.done = !p.done; if (D.shared) commApi({ kind: "done", id: d, done: p.done }).catch(() => A.toast("변경을 저장하지 못했어요")); } }
+    if (r) { D.posts = D.posts.filter((x) => x.id !== r); if (D.shared) commApi({ kind: "rm", id: r }).catch(() => A.toast("삭제하지 못했어요")); }
     if (d || r) { save(); renderComm(); }
   });
   $("#commForm").addEventListener("submit", async (e) => {
     e.preventDefault(); const f = e.target;
     const r = await TOOLS.community({ action: "post", type: f.type.value, title: f.title.value, body: f.body.value });
-    if (r.posted) { f.title.value = ""; f.body.value = ""; A.toast("올렸어요"); }
+    if (r.posted) { f.title.value = ""; f.body.value = ""; A.toast(r.visibleTo === "모든 사용자" ? "올렸어요 · 모두에게 보여요" : "올렸어요 · 이 기기에만 저장됨"); }
   });
   $("#repForm").addEventListener("submit", async (e) => {
     e.preventDefault(); const f = e.target;
@@ -757,6 +800,9 @@ export async function initAI(app) {
   $("#heroForm").addEventListener("submit", (e) => { e.preventDefault(); const v = $("#heroIn").value; $("#heroIn").value = ""; ask(v); });
   initTT(); initComm();
   renderTT(); renderComm(); renderDash();
+  syncComm(); // 다른 사람 글·제보 불러오기
+  setInterval(() => { if (!document.hidden) syncComm(); }, 30000);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) syncComm(); });
   loadSchool();
   setInterval(() => { if (!document.hidden) renderDash(); }, 60000);
 }
