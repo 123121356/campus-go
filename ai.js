@@ -11,6 +11,7 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
 };
 const DAYS = ["일", "월", "화", "수", "목", "금", "토"];
+const MEAL_URL = "https://www.kangwon.ac.kr/ko/extn/337/wkmenu-mngr/list.do?campusCd=2"; // 제5공학관 학생식당 주간 식단 (강원대 홈페이지, 삼척캠퍼스)
 const pad = (n) => String(n).padStart(2, "0");
 const hm = (d) => `${pad(d.getHours())}:${pad(d.getMinutes())}`;
 const toMin = (s) => { const [h, m] = String(s).split(":").map(Number); return h * 60 + (m || 0); };
@@ -317,9 +318,10 @@ const TOOLS = {
       .map((b) => ({ building: b.name, has: A.insideItems(b).filter((it) => /식당|푸드코트|카페|편의점/.test(it)).join(", ") }));
     A.showPins(places.map((p) => A.S.buildings.find((b) => b.name === p.building)?.id), "식당"); mapAct();
     const today = ymd(new Date());
+    act("🍚 이번 주 학식 식단 보기", () => window.open(MEAL_URL, "_blank", "noopener"));
     const menus = D.posts.filter((p) => p.type === "학식메뉴" && ymd(new Date(p.at)) === today).map((p) => `${p.title} ${p.body}`.trim());
     const m = nowMin();
-    return { places, congestion: estimate("식당"), todayMenusFromUsers: menus, officialMenu: "공식 식단 데이터는 아직 연동되지 않았어요. 메뉴를 알면 제보해 주세요(커뮤니티 > 학식메뉴).", hours: m < 480 || m > 1140 ? "운영시간 공식 데이터 없음. 지금은 이른 아침/늦은 시간이라 대부분 닫혀 있을 수 있어요. 편의점(CU)은 확인 필요." : "운영시간 공식 데이터 없음(운영 여부 확인 필요)" };
+    return { places, congestion: estimate("식당"), todayMenusFromUsers: menus, officialMenu: { restaurant: "제5공학관 학생식당", note: "학식(학생식당)은 제5공학관에 있어요. 이번 주 공식 식단은 학교 홈페이지에서 확인하세요.", url: MEAL_URL }, hours: m < 480 || m > 1140 ? "운영시간 공식 데이터 없음. 지금은 이른 아침/늦은 시간이라 대부분 닫혀 있을 수 있어요. 편의점(CU)은 확인 필요." : "운영시간 공식 데이터 없음(운영 여부 확인 필요)" };
   },
 };
 
@@ -596,7 +598,7 @@ async function localAgent(q, div) {
   }
   if (/학식|밥|메뉴|먹을|점심|저녁|식당|배고/.test(t)) {
     const r = await run("get_meals", {});
-    return `먹을 곳이에요 (지도에 표시).\n${r.places.map((p) => `· ${p.building}: ${p.has}`).join("\n")}\n지금 식당: ${r.congestion.level} [시간대 추정 — ${r.congestion.why}]\n${r.todayMenusFromUsers.length ? `오늘 메뉴 [제보]: ${r.todayMenusFromUsers.join(" / ")}` : r.officialMenu}`;
+    return `먹을 곳이에요 (지도에 표시).\n${r.places.map((p) => `· ${p.building}: ${p.has}`).join("\n")}\n지금 식당: ${r.congestion.level} [시간대 추정 — ${r.congestion.why}]\n🍚 학식은 ${r.officialMenu.restaurant}이에요. 이번 주 식단: ${r.officialMenu.url}${r.todayMenusFromUsers.length ? `\n오늘 메뉴 [제보]: ${r.todayMenusFromUsers.join(" / ")}` : ""}`;
   }
   if (/셔틀|통학|버스|bus/.test(t)) {
     const r = await run("get_bus", {});
