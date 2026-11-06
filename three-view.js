@@ -3,7 +3,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { buildCampus } from "./buildings3d.js?v=35";
-import { initNPCs } from "./npc.js?v=39";
+import { initNPCs } from "./npc.js?v=40";
 import { buildStreetLights } from "./streetlights.js?v=37";
 
 const LAT0 = 37.4528, LNG0 = 129.1618;

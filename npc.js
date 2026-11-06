@@ -663,8 +663,8 @@ export function initNPCs({ scene, camera, container, byId, bInfo, roadSegs, inSo
     F.wasWalk = walk;
     if (walk) {
       camera.getWorldDirection(fw); fw.y = 0; if (fw.lengthSq() < 1e-6) fw.set(0, 0, -1); fw.normalize();
-      const rx = -fw.z, rz = fw.x;                          // 오른쪽
-      goal.set(camera.position.x + fw.x * 2.4 + rx * 0.95, camera.position.y - 0.5 + bob, camera.position.z + fw.z * 2.4 + rz * 0.95);
+      const rx = -fw.z, rz = fw.x;                          // 오른쪽 방향 — 채팅창(오른쪽 아래)에 안 가리게 왼쪽에 떠 있음
+      goal.set(camera.position.x + fw.x * 2.4 - rx * 0.95, camera.position.y - 0.5 + bob, camera.position.z + fw.z * 2.4 - rz * 0.95);
     } else {
       goal.set(fairy.home.x, 1.6 + bob, fairy.home.z);       // 둘러보기 중엔 제자리 대기
     }
