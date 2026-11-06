@@ -11,7 +11,7 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
 };
 const DAYS = ["일", "월", "화", "수", "목", "금", "토"];
-const MEAL_URL = "https://www.kangwon.ac.kr/ko/extn/337/wkmenu-mngr/list.do?campusCd=2"; // 제5공학관 학생식당 주간 식단 (강원대 홈페이지, 삼척캠퍼스)
+// (학식 식단 링크 안내는 삭제함)
 const pad = (n) => String(n).padStart(2, "0");
 const hm = (d) => `${pad(d.getHours())}:${pad(d.getMinutes())}`;
 const toMin = (s) => { const [h, m] = String(s).split(":").map(Number); return h * 60 + (m || 0); };
@@ -302,7 +302,7 @@ const TOOLS = {
     if (category !== "calendar") {
       // 제목·AI키워드 일치는 가산점, 본문 일치는 기본점 → 매일 쌓인 과거 공지까지 검색
       const sc = (n) => score(`${n.title} ${(n.ai?.keywords || []).join(" ")}`.toLowerCase()) * 2 + score(`${n.ai?.summary || ""} ${n.ai?.target || ""} ${n.body || ""}`.toLowerCase());
-      notices = knownNotices().filter((n) => !cat || cat.includes(n.board))
+      notices = knownNotices().filter((n) => (!cat || cat.includes(n.board)) && !/학식|식단|메뉴|wkmenu/.test(`${n.title} ${n.url || ""}`)) // 학식 관련 학습 링크는 안내하지 않음
         .map((n) => ({ n, s: words.length ? sc(n) : 1 }))
         .filter((x) => x.s > 0).sort((a, b) => b.s - a.s || (b.n.date || "").localeCompare(a.n.date || "")).slice(0, 6)
         .map(({ n }) => { const dl = deadlineOf(n); return { type: D.school?.labels?.[n.board] || D.kb?.labels?.[n.board] || n.board, campus: n.campus, title: n.title, posted: n.date, deadline: dl ? `${dl} (${ddayText(dday(dl))})` : null, target: n.ai?.target || null, howToApply: n.ai?.how || null, contact: n.tel || "", summary: n.ai?.summary && n.ai.by !== "rule" ? `${n.ai.summary} / 원문 앞부분: ${(n.body || "").slice(0, 200)}` : (n.body || "").slice(0, 350), attachments: n.files?.length ? n.files : undefined, url: n.url }; });
@@ -362,10 +362,9 @@ const TOOLS = {
       .map((b) => ({ building: b.name, has: A.insideItems(b).filter((it) => /식당|푸드코트|카페|편의점/.test(it)).join(", ") }));
     A.showPins(places.map((p) => A.S.buildings.find((b) => b.name === p.building)?.id), "식당"); mapAct();
     const today = ymd(new Date());
-    act("🍚 이번 주 학식 식단 보기", () => window.open(MEAL_URL, "_blank", "noopener"));
     const menus = D.posts.filter((p) => p.type === "학식메뉴" && ymd(new Date(p.at)) === today).map((p) => `${p.title} ${p.body}`.trim());
     const m = nowMin();
-    return { places, congestion: estimate("식당"), todayMenusFromUsers: menus, officialMenu: { restaurant: "제5공학관 학생식당", note: "학식(학생식당)은 제5공학관에 있어요. 이번 주 공식 식단은 학교 홈페이지에서 확인하세요.", url: MEAL_URL }, hours: m < 480 || m > 1140 ? "운영시간 공식 데이터 없음. 지금은 이른 아침/늦은 시간이라 대부분 닫혀 있을 수 있어요. 편의점(CU)은 확인 필요." : "운영시간 공식 데이터 없음(운영 여부 확인 필요)" };
+    return { places, congestion: estimate("식당"), todayMenusFromUsers: menus, officialMenu: { restaurant: "제5공학관 학생식당", note: "학식(학생식당)은 제5공학관에 있어요. 식단 링크는 안내하지 않아요." }, hours: m < 480 || m > 1140 ? "운영시간 공식 데이터 없음. 지금은 이른 아침/늦은 시간이라 대부분 닫혀 있을 수 있어요. 편의점(CU)은 확인 필요." : "운영시간 공식 데이터 없음(운영 여부 확인 필요)" };
   },
 };
 
@@ -404,9 +403,9 @@ function freeIdeas() {
   const meal = estimate("식당"), lib = estimate("도서관");
   const ev = allNotices().filter((n) => n.board === "events" || /특강|프로그램|워크숍|세미나/.test(n.title)).filter((n) => /삼척|ALL/.test(n.campus)).slice(0, 2);
   return [
-    { place: "도서관", what: "1층 열람실·PC·프린터, 4층 그룹 스터디룸", congestion: `${lib.level} [시간대 추정]` },
+    { place: "도서관", what: "1층 카페·열람실·PC, 4층 그룹 스터디룸", congestion: `${lib.level} [시간대 추정]` },
     { place: "제5공학관 1층 학생식당·편의점", what: "식사(붐비기 전에)", congestion: `${meal.level} [시간대 추정]` },
-    { place: "학생회관", what: "푸드코트·복사실·ATM·서점" },
+    { place: "학생회관", what: "푸드코트·복사실(인쇄)·ATM·택배·서점" },
     { place: "그린에너지 연구관 10층 카페", what: "바다가 보이는 카페에서 휴식" },
     { place: "복합 스포츠센터", what: "헬스장·실내 트랙" },
     ...ev.map((n) => ({ event: n.title, posted: n.date, source: "학교 공지" })),
@@ -643,7 +642,7 @@ async function localAgent(q, div) {
   }
   if (/학식|밥|메뉴|먹을|점심|저녁|식당|배고/.test(t)) {
     const r = await run("get_meals", {});
-    return `먹을 곳이에요 (지도에 표시).\n${r.places.map((p) => `· ${p.building}: ${p.has}`).join("\n")}\n지금 식당: ${r.congestion.level} [시간대 추정 — ${r.congestion.why}]\n🍚 학식은 ${r.officialMenu.restaurant}이에요. 이번 주 식단: ${r.officialMenu.url}${r.todayMenusFromUsers.length ? `\n오늘 메뉴 [제보]: ${r.todayMenusFromUsers.join(" / ")}` : ""}`;
+    return `먹을 곳이에요 (지도에 표시).\n${r.places.map((p) => `· ${p.building}: ${p.has}`).join("\n")}\n지금 식당: ${r.congestion.level} [시간대 추정 — ${r.congestion.why}]\n🍚 학식은 ${r.officialMenu.restaurant}이에요.${r.todayMenusFromUsers.length ? `\n오늘 메뉴 [제보]: ${r.todayMenusFromUsers.join(" / ")}` : ""}`;
   }
   if (/셔틀|통학|버스|bus/.test(t)) {
     const r = await run("get_bus", {});

@@ -3,7 +3,7 @@
 // 가까이 가서 E키(모바일은 '듣기' 버튼)를 누르면 그 학생이 들은 소식을 사용자에게 알려 준다.
 // AI 요정(n120)은 T키로 채팅창을 열어 앱 에이전트(api/agent)와 같은 도구로 실제 데이터를 확인해 답한다. 서버가 안 되면 건물 데이터로 답한다.
 import * as THREE from "three";
-import { aiTools } from "./ai.js";
+import { aiTools } from "./ai.js?v=41";
 
 const TALK_R = 6;       // 이 거리 안에서 E키로 들을 수 있음
 const BUBBLE_MS = 7000; // 말풍선 표시 시간
@@ -181,7 +181,7 @@ export function initNPCs({ scene, camera, container, byId, bInfo, roadSegs, inSo
   // ATM·프린터 등은 여러 건물에 흩어져 있으므로, 한 건물로 단정하지 말고 있는 곳을 모두 돌려준다.
   const FACILITY = [
     { re: /atm|현금|돈\s*뽑|출금|은행/i, label: "ATM", match: /ATM|농협|국민|신한/ },
-    { re: /프린트|프린터|인쇄|출력|복사/i, label: "프린터·복사", match: /프린터|복사실|PC/ },
+    { re: /프린트|프린터|인쇄|출력|복사/i, label: "프린터·복사", match: /프린터|복사실|인쇄/ },
     { re: /편의점|매점|cu|간식/i, label: "편의점", match: /편의점|CU|자판기/ },
     { re: /밥|식당|학식|먹|점심|저녁|푸드/i, label: "식당", match: /식당|푸드코트/ },
     { re: /카페|커피/i, label: "카페", match: /카페/ },

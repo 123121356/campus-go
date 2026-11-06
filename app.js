@@ -1,5 +1,5 @@
 /* 캠퍼스GO — 강원대 삼척캠퍼스 AI 비서 + 지도·건물·버스 안내 */
-import { initAI, ask as aiAsk, renderDash, openAI, closeAI, aiOpen } from "./ai.js";
+import { initAI, ask as aiAsk, renderDash, openAI, closeAI, aiOpen } from "./ai.js?v=41";
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
@@ -117,14 +117,14 @@ const insideText = (b) => (b.inside || []).map((r) => `${r.label}: ${r.items.joi
 // "ATM", "프린터" 같은 시설이 있는 건물 찾기
 const FACILITY = [
   { re: /atm|현금|돈\s*뽑|출금|은행/i, label: "ATM", match: /ATM/ },
-  { re: /프린트|프린터|인쇄|출력|복사/i, label: "프린터·복사", match: /프린터|복사실|PC/ },
+  { re: /프린트|프린터|인쇄|출력|복사/i, label: "프린터·복사", match: /프린터|복사실|인쇄/ },
   { re: /편의점|매점|cu|간식/i, label: "편의점", match: /편의점|CU|자판기/ },
   { re: /밥|식당|학식|먹|점심|저녁|푸드/i, label: "식당", match: /식당|푸드코트/ },
   { re: /카페|커피/i, label: "카페", match: /카페/ },
   { re: /헬스|운동|체력/i, label: "운동", match: /헬스장|실내 트랙|실내 코트|체력/ },
   { re: /세탁|빨래/i, label: "세탁실", match: /세탁실/ },
   { re: /열람실|공부|스터디/i, label: "공부할 곳", match: /열람실|스터디/ },
-  { re: /우체국|택배|우편/i, label: "우편", match: /우편/ },
+  { re: /우체국|택배|우편/i, label: "우편·택배", match: /우편|택배/ },
   { re: /기숙사|생활관|긱사/i, label: "기숙사", match: /기숙사/ },
   { re: /행정|증명서|학적|장학/i, label: "행정", match: /행정/ },
 ];
@@ -806,7 +806,7 @@ function localAnswer(q) {
     if (!fq.hits.length) return `${fq.label} 정보가 아직 없어요.`;
     return `${fq.label} 있는 곳이에요. 지도에 표시했어요.\n${fq.hits.map((b) => `· ${b.name}: ${(b.inside || []).filter((r) => r.items.some((it) => FACILITY.find((f) => f.label === fq.label).match.test(it))).map((r) => r.label + " " + r.items.filter((it) => FACILITY.find((f) => f.label === fq.label).match.test(it)).join(", ")).join(" / ")}`).join("\n")} ${fq.hits.map((b) => `[[MAP:${b.id}]]`).join(" ")} [[PINLABEL:${fq.label}]]`;
   }
-  if (/처음|어디로|방문|visitor|뭐부터/.test(t)) return `처음이면 정문에서 출발하세요. 정문 바로 앞이 제3공학관이고, 학생식당·편의점·ATM은 제5공학관 1층과 학생회관에 있어요. [[MAP:n114]] [[MAP:n120]] [[MAP:n112]]`;
+  if (/처음|어디로|방문|visitor|뭐부터/.test(t)) return `처음이면 정문에서 출발하세요. 정문 바로 앞이 제3공학관이고, 학생식당·편의점은 제5공학관 1층, ATM·인쇄·택배는 학생회관에 있어요. [[MAP:n114]] [[MAP:n120]] [[MAP:n112]]`;
   const words = q.split(/[\s?.,!]+/).filter((w) => w.length >= 2);
   const hits = [...new Set(words.flatMap((w) => search(w.replace(/(이|가|은|는|을|를|에|어디|예요|에요|있어요)$/g, ""))))].slice(0, 3);
   if (/library|도서관/.test(t) && !hits.length) hits.push(S.buildings.find((b) => b.id === "n104"));
@@ -880,7 +880,7 @@ async function init3DView() {
   const box = $("#view3d");
   box.innerHTML = `<div class="v3d-loading">3D 캠퍼스 불러오는 중…</div>`;
   try {
-    const [mod, data] = await Promise.all([import("./three-view.js?v=40"), fetch("data/campus3d.json").then((r) => r.json())]);
+    const [mod, data] = await Promise.all([import("./three-view.js?v=41"), fetch("data/campus3d.json").then((r) => r.json())]);
     box.innerHTML = "";
     S.three = mod.init3D(box, {
       data, buildings: S.buildings, theme: currentTheme(),
