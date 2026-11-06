@@ -33,7 +33,7 @@ ${JSON.stringify(ctx.floors || {})}`;
 }
 
 // 모델이 단종되면 다음 후보로 자동 전환
-const GEMINI_MODELS = [...new Set(["gemini-3.8-flash", process.env.GEMINI_MODEL, "gemini-flash-latest"].filter(Boolean))]; // Gemini 3.8 Flash 우선
+const GEMINI_MODELS = [...new Set([process.env.GEMINI_MODEL, "gemini-flash-latest", "gemini-2.5-flash", "gemini-flash-lite-latest"].filter(Boolean))]; // .env 의 GEMINI_MODEL 우선, 그다음 최신 별칭
 let geminiOk = null;
 async function callGemini(system, messages) {
   let lastErr;

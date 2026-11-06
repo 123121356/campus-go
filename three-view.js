@@ -3,7 +3,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { buildCampus } from "./buildings3d.js?v=35";
-import { initNPCs } from "./npc.js?v=38";
+import { initNPCs } from "./npc.js?v=39";
 import { buildStreetLights } from "./streetlights.js?v=37";
 
 const LAT0 = 37.4528, LNG0 = 129.1618;
@@ -631,6 +631,8 @@ export function init3D(container, { data, buildings, onSelect, theme = "light" }
     // 건물 선택: 둘러보기면 그쪽으로 이동, 걷기 중이면 리스폰 위치만 바꿈
     focus(id) { highlight(id); if (mode === "walk") flash(`리스폰 위치: ${bInfo.get(id)?.name || ""} (R)`); else flyTo(id); },
     setTarget(id) { highlight(id); },
+    // AI 요정에게 질문: 걷기 모드로 들어가 채팅을 연다
+    async askAI(text) { if (mode !== "walk") startWalk(); await npc.ready; return npc.openAI(text); },
     setTheme: applyTheme,
     pause() { running = false; if (mode === "walk") stopWalk(); },
     resume() { if (!running) { running = true; clock.getDelta(); requestAnimationFrame(frame); } },

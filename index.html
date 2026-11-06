@@ -30,7 +30,6 @@
       <input id="q" type="search" placeholder="어디를 찾으세요? (예: ATM, 프린터, 5공학관)" autocomplete="off" aria-label="건물 검색" />
       <ul id="suggest" class="suggest" hidden></ul>
     </div>
-    <button id="aiBtn" class="ai-btn" aria-label="AI 비서 열기" title="AI 비서 · 오늘의 대시보드"><span class="spark">✦</span><span class="lbl">AI</span></button>
     <button id="langBtn" class="icon-btn" aria-label="언어 선택" title="언어 선택 (번역)">🌐</button>
     <button id="themeBtn" class="icon-btn" aria-label="다크 모드로 전환"></button>
     <button id="locate" class="icon-btn" title="내 위치 (지도 길게 누르기·우클릭으로 직접 지정)" aria-label="내 위치">◎</button>
@@ -129,92 +128,6 @@
   </main>
 
 
-  <!-- ================= AI 비서 전용 화면 (✦AI 버튼) ================= -->
-  <section id="aiView" class="aiview" hidden aria-label="캠퍼스GO AI">
-    <nav class="av-nav" aria-label="AI 메뉴">
-      <div class="av-brand"><span class="spark">✦</span><b>캠퍼스GO AI</b><small>삼척캠퍼스 AI 비서</small></div>
-      <button data-page="home" class="on">🏠 <span>오늘</span></button>
-      <button data-page="chat" class="mob-only">💬 <span>대화</span></button>
-      <button data-page="tt">🗓 <span>내 시간표</span></button>
-      <button data-page="comm">👥 <span>커뮤니티·제보</span></button>
-      <button id="avMap" class="av-map">🗺 <span>캠퍼스 지도</span></button>
-    </nav>
-    <main class="av-main">
-      <div class="av-page" id="avHome">
-        <div class="av-hero">
-          <div class="av-greet" id="avGreet"></div>
-          <h1>무엇을 도와드릴까요?</h1>
-          <form id="heroForm" class="hero-form">
-            <input id="heroIn" placeholder="예: 10분 뒤 301호 수업이야, 어디로 가야 해?" autocomplete="off" maxlength="500" />
-            <button type="submit" aria-label="보내기">➜</button>
-          </form>
-          <div class="hero-chips">
-            <button data-ask="10분 뒤 301호 수업이야. 어디로 가야 해?">🧭 강의실 길안내</button>
-            <button data-ask="오늘 공강 2시간인데 뭐 하지?">☕ 공강 추천</button>
-            <button data-ask="지금 밥 먹을 만한 곳 어디야?">🍚 지금 밥 먹을 곳</button>
-            <button data-ask="내가 이번 학기에 신청할 수 있는 장학금 있어?">🎓 장학금</button>
-            <button data-ask="계절학기 수강신청이랑 학점교류 일정 알려줘">📅 학사일정</button>
-            <button data-ask="최근 삼척캠퍼스 공지 요약해줘">📢 공지 요약</button>
-            <button data-ask="도서관 지금 붐벼?">📊 혼잡도</button>
-            <button data-ask="도서관에서 검은 지갑 잃어버렸어. 분실물 올려줘">🔎 분실물 올리기</button>
-          </div>
-        </div>
-        <div id="dash" class="av-grid"></div>
-      </div>
-      <!-- 시간표 -->
-      <div class="av-page" id="avTT" hidden>
-        <div class="bus-head"><div><h3>내 시간표</h3><p class="muted">다음 수업·이동 시간을 AI가 계산해요 (이 기기에만 저장)</p></div><button id="ttPhoto" class="ghost">📷 사진으로 등록</button></div>
-        <div id="ttList" class="ttlist"></div>
-        <form id="ttForm" class="form">
-          <input name="name" placeholder="과목명" required maxlength="40" />
-          <div class="row2">
-            <select name="day"><option>월</option><option>화</option><option>수</option><option>목</option><option>금</option><option>토</option></select>
-            <input name="start" type="time" value="09:00" required />
-            <input name="end" type="time" value="10:15" />
-          </div>
-          <div class="row2"><select name="place" id="ttPlace"></select><input name="room" placeholder="호실 (예: 301)" maxlength="6" /></div>
-          <button class="primary">＋ 수업 추가</button>
-        </form>
-        <button id="ttClear" class="ghost small">시간표 전체 지우기</button>
-      </div>
-
-      <!-- 커뮤니티 + 실시간 제보 -->
-      <div class="av-page" id="avComm" hidden>
-        <h3 style="margin:0 0 4px">📊 실시간 현황 제보</h3>
-        <p class="muted" style="margin:0 0 8px;font-size:12px">센서 데이터가 없는 곳은 여러분의 제보로 채워요. 제보와 추정은 구분해서 보여 줘요.</p>
-        <form id="repForm" class="form inline">
-          <select name="place"><option>학생식당(5공학관)</option><option>푸드코트(학생회관)</option><option>도서관 열람실</option><option>도서관 PC·프린터</option><option>후문 버스정류장</option><option>통학버스</option><option>헬스장</option><option>카페</option></select>
-          <select name="level"><option>여유</option><option selected>보통</option><option>혼잡</option></select>
-          <input name="note" placeholder="한 줄 메모 (선택)" maxlength="80" />
-          <button class="primary">제보</button>
-        </form>
-        <ul id="repList" class="replist"></ul>
-        <h3 style="margin:16px 0 6px">💬 캠퍼스 커뮤니티</h3>
-        <div id="commTypes" class="chips"></div>
-        <form id="commForm" class="form">
-          <div class="row2"><select name="type"><option>분실물</option><option>중고거래</option><option>팀원모집</option><option>동아리·행사</option><option>주변정보</option><option>학식메뉴</option></select><input name="title" placeholder="제목" required maxlength="60" /></div>
-          <textarea name="body" rows="2" placeholder="내용 (전화번호 등 개인정보는 적지 마세요)" maxlength="400"></textarea>
-          <button class="primary">글 올리기</button>
-        </form>
-        <ul id="commList" class="posts"></ul>
-      </div>
-
-    </main>
-    <section class="av-chat" id="avChat" aria-label="AI 대화">
-      <header class="av-chat-head"><span class="spark">✦</span><b>AI 대화</b><small id="aiMode"></small></header>
-      <div id="msgs" class="msgs">
-        <div class="msg bot">안녕하세요! 강의실 찾기, 시간표, 장학금·학사일정, 학식, 버스, 분실물까지 물어보세요. 제가 직접 데이터를 찾아보고 필요하면 지도에도 표시해 드려요.<br/><span class="muted">English is OK too.</span></div>
-      </div>
-      <div id="attach" class="attach" hidden><img alt="첨부 미리보기" /><span>사진 첨부됨 (시간표 사진이면 자동 등록)</span><button type="button" aria-label="첨부 취소">✕</button></div>
-      <form id="chatForm" class="chat-form">
-        <button type="button" id="attachBtn" class="clip" aria-label="사진 첨부" title="시간표 사진 등 첨부">📷</button>
-        <input id="aiFile" type="file" accept="image/*" hidden />
-        <input id="chatIn" placeholder="무엇이든 물어보세요" autocomplete="off" maxlength="500" />
-        <button type="submit">보내기</button>
-      </form>
-    </section>
-  </section>
-
   <!-- 건물 내부: 층별 사진 뷰어 -->
   <div id="viewer" class="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="vTitle">
     <div class="v-box">
@@ -248,6 +161,6 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="translate.js?v=1"></script>
-  <script src="app.js?v=38" type="module"></script>
+  <script src="app.js?v=39" type="module"></script>
 </body>
 </html>

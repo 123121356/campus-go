@@ -46,6 +46,17 @@ async function commApi(body) {
   if (!r.ok) throw new Error(j.error || r.status);
   return j;
 }
+// 메신저 알림 서버 (api/notify)
+const chName = (c) => (/disc|디스/i.test(c || "") ? "discord" : /tele|텔레/i.test(c || "") ? "telegram" : "");
+async function notifyApi(body) {
+  try {
+    const r = await fetch("/api/notify", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ me: D.me, ...body }) });
+    const j = await r.json().catch(() => ({}));
+    return r.ok ? j : { error: j.error || `서버 오류 ${r.status}`, ...j };
+  } catch (e) { return { error: "알림 서버에 연결하지 못했어요" }; }
+}
+// 시간표가 바뀌면 메신저 구독(수업 알림)에 저장된 시간표도 바꿈
+const syncSubsTT = () => { if (store.get("cg_hasSubs", false)) notifyApi({ kind: "tt", tt: D.tt }); };
 async function syncComm() {
   try {
     const r = await fetch(`/api/community?me=${encodeURIComponent(D.me)}`, { cache: "no-store" });
@@ -228,7 +239,7 @@ const TOOLS = {
       D.tt = D.tt.filter((x) => !(x.day === day && x.start === start));
       D.tt.push(item); added.push(`${DAYS[day]} ${start}~${end} ${item.name}${item.place ? ` (${item.place})` : ""}`);
     }
-    save(); renderTT(); renderDash();
+    save(); renderTT(); renderDash(); if (added.length) syncSubsTT();
     if (added.length) act("🗓 내 시간표 보기", () => aiPage("tt"));
     return { added, count: added.length, total: D.tt.length };
   },
@@ -236,7 +247,7 @@ const TOOLS = {
   async remove_class({ name }) {
     const before = D.tt.length;
     D.tt = D.tt.filter((c) => !c.name.includes(String(name || "~")));
-    save(); renderTT(); renderDash();
+    save(); renderTT(); renderDash(); syncSubsTT();
     return { removed: before - D.tt.length };
   },
 
@@ -249,6 +260,39 @@ const TOOLS = {
   },
 
   async get_weather() { return A.weatherSnapshot(); },
+
+  /* ----- 요즘 화제 (커뮤니티·검색 트렌드를 주기적으로 학습한 data/trends.json) ----- */
+  async get_trends({ category = "", query = "" } = {}) {
+    if (!D.trends) D.trends = await fetch("data/trends.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    const j = D.trends;
+    if (!j?.topics?.length) return { note: "아직 학습된 화제가 없어요 (tools/learn-trends.mjs 실행 필요)" };
+    const cat = String(category || "").toLowerCase(), q = String(query || "").replace(/\s+/g, "");
+    const list = j.topics.filter((t) => (!cat || cat === "all" || t.category === cat) && (!q || `${t.title}${t.summary}`.replace(/\s+/g, "").includes(q))).slice(0, 10);
+    return {
+      updatedAt: j.updatedAt, basis: "공개 커뮤니티 제목·검색 트렌드를 AI가 주제로 요약한 것 (사실 확인 안 됨, 분위기 참고용)",
+      topics: list.map((t) => ({ title: t.title, category: t.category, summary: t.summary, from: t.sources.map((s) => j.sourceLabels?.[s] || s), heat: t.heat, daysTrending: t.days || 1, fading: !!t.cooling })),
+    };
+  },
+
+  /* ----- 메신저(텔레그램·디스코드)로 보내기 ----- */
+  async messenger_link({ channel = "telegram", webhook = "" } = {}) {
+    return notifyApi({ kind: "link", channel: /disc|디스/i.test(channel) ? "discord" : "telegram", webhook });
+  },
+  async send_message({ channel = "", text = "" } = {}) {
+    return notifyApi({ kind: "send", channel: chName(channel), text });
+  },
+  async subscribe(a = {}) {
+    const schedule = { type: a.schedule_type, time: a.time, days: a.days, minutes: a.minutes, hours: a.hours, at: a.at };
+    const r = await notifyApi({ kind: "subscribe", channel: chName(a.channel), topics: a.topics, schedule, text: a.text, filter: a.filter, title: a.title, preview: /^(y|yes|true|네|응)/i.test(String(a.preview || "")), tt: D.tt });
+    if (r.ok) store.set("cg_hasSubs", true);
+    return r;
+  },
+  async my_subscriptions({ action = "list", id = "", all = "" } = {}) {
+    if (action === "cancel") return notifyApi({ kind: "cancel", id, all: /^(y|yes|true|모두|전부)/i.test(String(all)) });
+    const r = await fetch(`/api/notify?me=${encodeURIComponent(D.me)}`, { cache: "no-store" });
+    const j = await r.json().catch(() => ({}));
+    return r.ok ? j : { error: j.error || `서버 오류 ${r.status}` };
+  },
 
   async search_school_info({ query = "", category = "all" } = {}) {
     const words = String(query).toLowerCase().split(/[\s,]+/).filter((w) => w.length >= 2 && !/공지|안내|알려|있어|뭐|어떤|해줘|요약/.test(w));
@@ -461,6 +505,7 @@ async function callAgent() {
 }
 
 export async function ask(text, image) {
+  if (!$("#msgs")) return A?.askAI3D?.(text); // AI 대화는 3D AI 요정으로
   text = String(text || "").trim();
   if ((!text && !image) || D.busy) return;
   D.busy = true; ACTS = [];
@@ -749,6 +794,7 @@ async function readImage(file) {
 const isMobile = () => matchMedia("(max-width: 760px)").matches;
 let PAGE = "home";
 export function aiPage(page) {
+  if (!$("#aiView")) return;
   PAGE = page;
   const map = { home: "avHome", tt: "avTT", comm: "avComm" };
   Object.values(map).forEach((id) => ($("#" + id).hidden = map[page] !== id));
@@ -761,18 +807,20 @@ export function aiPage(page) {
   $(".av-main").scrollTop = 0;
 }
 export function openAI(page) {
+  if (!$("#aiView")) return; // AI 화면 없음: AI는 3D 캠퍼스의 AI 요정에서만 사용
   $("#aiView").hidden = false;
   document.body.classList.add("ai-open");
   $("#aiBtn")?.classList.add("on");
   aiPage(page || (PAGE === "chat" && !isMobile() ? "home" : PAGE));
 }
 export function closeAI() {
+  if (!$("#aiView")) return;
   $("#aiView").hidden = true;
   document.body.classList.remove("ai-open");
   $("#aiBtn")?.classList.remove("on");
   setTimeout(() => A?.S.map?.invalidateSize(), 50);
 }
-export const aiOpen = () => !$("#aiView").hidden;
+export const aiOpen = () => !!$("#aiView") && !$("#aiView").hidden;
 
 /* ================= 시작 ================= */
 export async function initAI(app) {
@@ -781,6 +829,12 @@ export async function initAI(app) {
   D.posts = store.get("cg_posts", []);
   D.reports = store.get("cg_reports", []);
   D.cal = await fetch("data/calendar.json").then((r) => r.json()).catch(() => null);
+  if (!$("#aiView")) { // AI 화면이 없으면 데이터만 준비 (3D AI 요정이 같은 도구를 씀)
+    syncComm();
+    setInterval(() => { if (!document.hidden) syncComm(); }, 30000);
+    loadSchool();
+    return;
+  }
   let pending = null;
   $("#chatForm").addEventListener("submit", (e) => { e.preventDefault(); const v = $("#chatIn").value; $("#chatIn").value = ""; const im = pending; pending = null; $("#attach").hidden = true; ask(v, im); });
   $("#aiFile").addEventListener("change", async (e) => {

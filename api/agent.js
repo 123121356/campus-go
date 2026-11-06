@@ -21,7 +21,23 @@ const SYSTEM = `너는 "캠퍼스GO AI", 강원대학교 삼척캠퍼스 전용 
 - 건물·시설 이름은 도구 결과에 나온 이름 그대로 쓴다(예: "도서관", "그린에너지 연구관 10층 카페"). 결과에 없는 장소·이름·운영시간을 만들지 않는다.
 - 학식·식단·메뉴 질문은 get_meals를 부르고, 학식은 "제5공학관 학생식당"이라고 알려 준 뒤 이번 주 식단 링크(https://www.kangwon.ac.kr/ko/extn/337/wkmenu-mngr/list.do?campusCd=2)를 그대로 붙여 준다. 링크 속 메뉴 내용은 모르므로 메뉴를 지어내지 않는다(제보된 메뉴가 있으면 [제보]로 구분).
 - 운영시간 데이터가 없으면 "운영 여부는 확인이 필요해요"라고 말한다.
-- 좌표 숫자, 내부 id(n101 등)는 사용자에게 보여 주지 않는다.`
+- 좌표 숫자, 내부 id(n101 등)는 사용자에게 보여 주지 않는다.
+- 현재 위치("여기 어디", "내 위치", "가까운 건물")를 물으면 [사용자]의 위치 설명(지금 어느 건물 근처인지)만 근거로 답한다. 학식이 제5공학관이라고 해서 현재 위치를 제5공학관으로 단정하지 말 것.
+[요즘 화제]
+- "요즘 뭐가 유행이야?", "취업 커뮤니티 분위기 어때?", "인기 검색어" 같은 질문은 get_trends로 답한다. 커뮤니티 요약은 사실이 아니라 분위기라고 밝히고, 출처 종류(커뮤니티·구글 트렌드 등)를 짧게 말한다. 정치·혐오·자극적 이야기는 하지 않는다.
+- 취업 화제가 나오면 관련 학교 공지(search_school_info)나 학사일정과 연결해 도움이 되는 방향으로 답한다.
+- topics에 trends(요즘 화제)를 넣어 메신저 구독으로도 받을 수 있다.
+[메신저로 보내기 — 텔레그램·디스코드]
+- 사용자가 정보를 텔레그램/디스코드(메신저, 폰, 알림)로 보내 달라고 하면, 먼저 "지금 한 번만 보낼까요, 주기적으로 받을까요?"라고 묻는다. 이미 말했으면 묻지 않는다.
+  · 주기적이면 언제인지 확인한다: 매일/평일 몇 시(daily), 수업 N분 전(before_class), N시간마다(interval), 새 공지·새 글이 생길 때(on_new), 특정 시각 한 번(once). 메신저를 말하지 않았으면 어느 쪽인지 묻는다.
+- 메신저 연결은 messenger_link로 확인한다. 텔레그램이 연결 안 됐으면 결과의 url을 그대로 주고 "링크 열고 시작 누른 뒤 '연결했어'라고 말해 주세요"라고 안내한다. "연결했어"라고 하면 messenger_link를 다시 불러 확인한다.
+  디스코드는 채널 설정 › 연동 › 웹후크 › 새 웹후크 › URL 복사 후 붙여 넣어 달라고 하고, 주소를 받으면 messenger_link(channel=discord, webhook=주소)로 연결한다.
+- 한 번 보내기: 필요한 도구로 실제 데이터를 먼저 확인한 뒤, 그 결과만으로 짧게 정리해서 send_message의 text로 보낸다(지어내지 않는다, 마크다운 대신 줄바꿈과 "· " 사용).
+- 주기 보내기: subscribe를 쓴다. 내용은 서버가 보낼 때마다 최신 데이터로 새로 만든다. topics: weather(날씨), class(수업·시간표), bus(후문 버스), notices(새 공지), deadlines(마감 임박 공지), calendar(학사일정), community(커뮤니티 새 글), trends(요즘 화제), reminder(메모; text 필요). 특정 단어만 원하면 filter(예: "장학", "분실물").
+  등록되면 무엇을·언제·어디로 보내는지 한 줄로 확인하고, 그만 받으려면 "알림 그만"이라고 하면 된다고 알려 준다.
+- "내 알림/구독 뭐 있어?" → my_subscriptions(action=list), "그만/해지" → 목록에서 골라 my_subscriptions(action=cancel, id) (모두면 all=yes).
+- 한 번 보내기를 "~시에" 원하면 subscribe(schedule_type=once, at=YYYY-MM-DDTHH:MM 한국 시간)로 등록한다. 지금 시각은 아래 [지금]을 기준으로 계산한다.
+- 웹후크 주소·연결 코드는 답에 다시 적지 않는다.`
 
 const T = (name, description, properties = {}, required = []) => ({ name, description, parameters: { type: "OBJECT", properties, required } });
 const S = (d) => ({ type: "STRING", description: d });
@@ -37,11 +53,25 @@ const TOOLS = [{ functionDeclarations: [
   T("campus_status", "식당·도서관·건물 등의 혼잡도/이용 현황. 최근 사용자 제보와 시간대 추정을 구분해 돌려준다.", { place: S("장소(선택, 비우면 전체)") }),
   T("report_status", "사용자가 본 현장 상황(혼잡도)을 제보로 저장한다.", { place: S("장소"), level: S("여유, 보통, 혼잡 중 하나"), note: S("한 줄 메모(선택)") }, ["place", "level"]),
   T("community", "캠퍼스 커뮤니티 글 목록 보기 또는 글 쓰기. 종류: 분실물, 중고거래, 팀원모집, 동아리·행사, 주변정보, 학식메뉴.", { action: S("list 또는 post"), type: S("글 종류(선택)"), title: S("제목(post)"), body: S("내용(post)") }, ["action"]),
+  T("get_trends", "요즘 화제: 취업 커뮤니티 분위기, 인기 검색어, 유튜브 인기 급상승, 검색량 변화를 AI가 주제로 요약한 것.", { category: S("job, trend, youtube, search, meme, campus, all 중 하나(선택)"), query: S("찾을 단어(선택)") }),
+  T("messenger_link", "텔레그램/디스코드 연결 상태 확인 및 연결. 텔레그램은 연결 링크(url)를 돌려주고, 디스코드는 webhook 주소를 받아 연결한다.", { channel: S("telegram 또는 discord"), webhook: S("디스코드 웹후크 주소(디스코드 연결 때만)") }, ["channel"]),
+  T("send_message", "지금 한 번 메신저로 보낸다. 다른 도구로 확인한 실제 정보를 정리한 글을 text로 넣는다.", { channel: S("telegram 또는 discord (비우면 연결된 것)"), text: S("보낼 내용(한국어, 1500자 이하)") }, ["text"]),
+  T("subscribe", "주기적으로(또는 정한 시각에 한 번) 메신저로 최신 정보를 보내도록 등록한다. 서버가 15분마다 확인해서 보낸다.", {
+    channel: S("telegram 또는 discord (비우면 연결된 것)"),
+    topics: { type: "ARRAY", items: { type: "STRING" }, description: "weather, class, bus, notices, deadlines, calendar, community, trends, reminder 중 여러 개" },
+    schedule_type: S("daily, before_class, interval, on_new, once 중 하나"),
+    time: S("daily: 보낼 시각 HH:MM"), days: S("daily: 요일들(예: 월화수목금, 평일, 주말, 비우면 매일)"),
+    minutes: S("before_class: 수업 몇 분 전(5~120)"), hours: S("interval: 몇 시간마다(1~24)"), at: S("once: YYYY-MM-DDTHH:MM (한국 시간)"),
+    text: S("reminder 메모 내용"), filter: S("notices·community에서 이 단어가 들어간 것만(선택)"), title: S("구독 이름(예: 아침 브리핑)"),
+    preview: S("yes면 등록하면서 미리보기를 한 번 보냄"),
+  }, ["topics", "schedule_type"]),
+  T("my_subscriptions", "내 메신저 알림(구독) 목록 보기 또는 해지.", { action: S("list 또는 cancel"), id: S("해지할 구독 id"), all: S("yes면 모두 해지") }, ["action"]),
   T("get_meals", "학식(제5공학관 학생식당) 안내와 이번 주 공식 식단 링크, 교내 식당·푸드코트·카페 위치, 지금 운영/혼잡 추정, 사용자가 제보한 오늘 메뉴·가격을 돌려준다."),
 ] }];
 
 // Gemini 3.8 Flash 우선 (.env 의 GEMINI_MODEL 은 그다음). 혼잡·무료 한도 초과면 다음 모델로 자동 전환 (시연 중에도 끊기지 않게)
-const MODELS = [...new Set(["gemini-3.8-flash", process.env.GEMINI_MODEL, "gemini-3.5-flash", "gemini-3.1-flash-lite", "gemini-flash-latest", "gemini-flash-lite-latest", "gemini-3.7-flash"].filter(Boolean))];
+// .env 의 GEMINI_MODEL 을 가장 먼저 시도(연결 보장) → 그다음 범용 최신 별칭들로 자동 전환
+const MODELS = [...new Set([process.env.GEMINI_MODEL, "gemini-flash-latest", "gemini-2.5-flash", "gemini-flash-lite-latest", "gemini-2.0-flash"].filter(Boolean))];
 // dev-server는 요청마다 모듈을 다시 읽으므로 상태는 globalThis에 보관
 const G = (globalThis.__cgAgent ||= { okModel: null, coolUntil: {} });
 

@@ -400,7 +400,7 @@ function select(id, { fly = true, fromScene = false } = {}) {
     <div class="muted meta">${esc((CAT[b.category] || {}).label || b.category)}${b.floorsText ? ` · ${esc(b.floorsText)}` : ""}</div>
     ${(b.inside || []).length ? `<dl class="inside">${b.inside.map((r) => `<dt>${esc(r.label)}</dt><dd>${r.items.map((it) => `<span>${esc(it)}</span>`).join("")}</dd>`).join("")}</dl>` : `<p class="muted">시설 정보 준비 중</p>`}
     ${stop ? `<div class="note">🚐 통학버스 타는 곳 (${esc(stop.name)}) <a href="#" id="toBus">시간 보기</a></div>` : ""}
-    <button class="ai-ask" data-ask="${esc(b.name)}에 대해 알려줘. 가는 길도">✨ AI에게 이 건물 물어보기</button>
+    <button class="ai-ask" data-ask="${esc(b.name)}에 대해 알려줘. 가는 길도">🤖 3D AI 요정에게 이 건물 물어보기</button>
     <div class="row actions">
       ${nf ? `<button class="primary alt" id="inside">🏢 내부 사진 (${nf})</button>` : ""}
       <button class="ghost" id="share">링크 복사</button>
@@ -444,14 +444,14 @@ function initSearch() {
     const fq = facilityQuery(q.value);
     sug.innerHTML = items.length
       ? items.map((b, i) => `<li data-id="${b.id}" class="${i === idx ? "on" : ""}"><span>${esc(b.name)}</span><small>${esc((b.facilities || []).slice(0, 2).join(" · "))}</small></li>`).join("")
-      : `<li data-ai="1"><span>‘${esc(q.value)}’ AI 도우미에게 물어보기</span><small>→</small></li>`;
+      : `<li data-ai="1"><span>‘${esc(q.value)}’ 3D AI 요정에게 물어보기</span><small>→</small></li>`;
     if (fq?.hits.length) sug.innerHTML = `<li data-fac="${esc(q.value)}"><span>📍 ${esc(fq.label)} 있는 곳 모두 지도에 표시</span><small>${fq.hits.length}곳</small></li>` + sug.innerHTML;
     sug.hidden = false;
     $$("#suggest li").forEach((el) => el.addEventListener("mousedown", (e) => { e.preventDefault(); pick(el); }));
   });
   const pick = (el) => {
     if (el.dataset.fac) { const fq = facilityQuery(el.dataset.fac); showPins(fq.hits.map((b) => b.id), fq.label); closePanelOnMobile(); q.value = ""; close(); q.blur(); return; }
-    if (el.dataset.ai) { switchTab("ai"); ask(q.value); } else { select(el.dataset.id, { fly: false }); showPins([el.dataset.id]); }
+    if (el.dataset.ai) { askAI3D(q.value); } else { select(el.dataset.id, { fly: false }); showPins([el.dataset.id]); }
     q.value = ""; close(); q.blur();
   };
   q.addEventListener("keydown", (e) => {
@@ -880,7 +880,7 @@ async function init3DView() {
   const box = $("#view3d");
   box.innerHTML = `<div class="v3d-loading">3D 캠퍼스 불러오는 중…</div>`;
   try {
-    const [mod, data] = await Promise.all([import("./three-view.js?v=38"), fetch("data/campus3d.json").then((r) => r.json())]);
+    const [mod, data] = await Promise.all([import("./three-view.js?v=39"), fetch("data/campus3d.json").then((r) => r.json())]);
     box.innerHTML = "";
     S.three = mod.init3D(box, {
       data, buildings: S.buildings, theme: currentTheme(),
@@ -896,6 +896,15 @@ async function init3DView() {
     box.innerHTML = `<div class="v3d-loading"><div style="text-align:center;line-height:1.7">${why}<br><small style="opacity:.7">${esc(String(e?.message || e)).slice(0, 160)}</small><br><button class="primary" id="retry3d">다시 시도</button></div></div>`;
     $("#retry3d")?.addEventListener("click", () => init3DView());
   } finally { S.threeLoading = false; }
+}
+
+// AI 질문은 3D 캠퍼스의 AI 요정이 받는다
+async function askAI3D(text) {
+  if (S.view !== "3d") setView("3d");
+  closePanelOnMobile();
+  for (let i = 0; i < 150 && !S.three; i++) await new Promise((r) => setTimeout(r, 100));
+  if (!S.three) return toast("3D 캠퍼스를 불러오지 못했어요");
+  if (!(await S.three.askAI?.(text))) toast("AI 요정을 준비하는 중이에요. 잠시 뒤 T키로 불러 보세요");
 }
 
 function setView(v) {
@@ -1072,11 +1081,13 @@ function initTheme() {
   initEdit();
   await initAI({
     S, search, facilityQuery, FACILITY, insideItems, showPins, select, routeTo, routeEstimate, openViewer, switchTab, openPanel, toast,
-    busSnapshot, upcoming, waitText, shuttleStatus, weatherSnapshot, weatherAnswer, wmo, rainSoon, localAnswer,
+    busSnapshot, upcoming, waitText, shuttleStatus, weatherSnapshot, weatherAnswer, wmo, rainSoon, localAnswer, askAI3D,
   });
-  // ✦AI 버튼: 지도 앱 ↔ AI 전용 대시보드 전환
-  $("#aiBtn").addEventListener("click", (e) => { e.currentTarget.blur(); aiOpen() ? closeAI() : openAI("home"); });
-  $("#q").addEventListener("focus", () => { if (aiOpen()) closeAI(); }); // 지도 검색을 쓰면 지도 화면으로
+  // AI는 3D 캠퍼스의 AI 요정에서만: "AI에게 물어보기" 버튼은 모두 3D로 연결
+  document.addEventListener("click", (e) => {
+    const q = e.target.closest("[data-ask]")?.dataset.ask;
+    if (q) { e.preventDefault(); askAI3D(q); }
+  });
   initViewer();
   S.view = "map";
   $$(".view-toggle button").forEach((b) => b.addEventListener("click", () => setView(b.dataset.view)));
@@ -1117,7 +1128,7 @@ function initTheme() {
   if (params.get("view") === "3d") setView("3d");
   const deep = params.get("b");
   if (deep) select(deep);
-  else { switchTab("buildings"); openAI("home"); } // 첫 화면 = AI 비서 대시보드
-  if (params.get("ask")) aiAsk(params.get("ask"));
+  else switchTab("buildings");
+  if (params.get("ask")) askAI3D(params.get("ask"));
   if (deep && params.get("f")) openViewer(deep, params.get("f"));
 })();

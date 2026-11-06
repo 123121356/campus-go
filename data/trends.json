@@ -1,0 +1,9 @@
+{
+ "_note": "tools/learn-trends.mjs 가 만든 파일. 3D NPC 대사·AI 요정(get_trends)이 씁니다. 원문 글 제목은 저장하지 않고 AI가 요약한 주제만 담습니다. learn-trends.bat 을 한 번 실행하면 채워집니다.",
+ "updatedAt": null,
+ "mode": null,
+ "sources": {},
+ "sourceLabels": { "dc": "디시인사이드 커뮤니티", "google": "구글 트렌드", "youtube": "유튜브 인기 급상승", "naver": "네이버 데이터랩" },
+ "topics": [],
+ "runs": []
+}

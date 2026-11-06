@@ -20,6 +20,10 @@ if not exist ".git" (
   git branch -M main
 )
 
+rem 메신저 알림 15분 주기 실행(GitHub Actions) 설정 파일을 제자리에 둠
+if not exist ".github\workflows\notify.yml" (mkdir ".github\workflows" 2>nul & copy /y tools\notify.yml ".github\workflows\notify.yml" >nul)
+if not exist ".github\workflows\learn-trends.yml" (mkdir ".github\workflows" 2>nul & copy /y tools\learn-trends.yml ".github\workflows\learn-trends.yml" >nul)
+
 git add .
 git diff --cached --name-only | findstr /r /c:"^\.env$" >nul && (
   echo [중단] .env 파일이 올라가려고 합니다. API 키가 새어 나갈 수 있어 멈춥니다.

@@ -44,4 +44,15 @@ http.createServer(async (req, res) => {
   if (!file.startsWith(ROOT) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) { res.writeHead(404); return res.end("not found"); }
   res.writeHead(200, { "Content-Type": TYPES[path.extname(file)] || "application/octet-stream" });
   fs.createReadStream(file).pipe(res);
-}).listen(PORT, () => console.log(`캠퍼스GO → http://localhost:${PORT}`));
+}).listen(PORT, () => {
+  console.log(`캠퍼스GO → http://localhost:${PORT}`);
+  // 배포 없이 시연할 때: 1분마다 메신저 주기 알림 실행 (.env 에 NOTIFY_LOCAL_RUN=1, NOTIFY_SECRET 필요)
+  if (process.env.NOTIFY_LOCAL_RUN === "1" && process.env.NOTIFY_SECRET) {
+    console.log("메신저 주기 알림: 이 PC에서 1분마다 확인합니다");
+    setInterval(() => {
+      fetch(`http://localhost:${PORT}/api/notify?run=1`, { method: "POST", headers: { "x-notify-secret": process.env.NOTIFY_SECRET } })
+        .then((r) => r.json()).then((j) => { const n = (j.results || []).filter((x) => x.sent).length; if (n) console.log(`[알림] ${n}건 보냄`); })
+        .catch(() => {});
+    }, 60000);
+  }
+});

@@ -1,0 +1,29 @@
+# 메신저 알림(텔레그램·디스코드) 주기 실행 — 15분마다 배포된 앱의 /api/notify?run=1 을 부릅니다.
+# 준비: GitHub 저장소 → Settings → Secrets and variables → Actions → New repository secret
+#   APP_URL       = 배포 주소 (예: https://campus-go-xxx.vercel.app)
+#   NOTIFY_SECRET = Vercel 환경변수 NOTIFY_SECRET 과 같은 값
+# 주의: 비공개(private) 저장소는 Actions 무료 시간(월 2,000분)을 씁니다. 15분마다면 한 달 약 2,900분이라
+#       비공개 저장소라면 아래 cron 을 "*/30 * * * *"(30분마다)로 바꾸세요. 공개 저장소는 무료입니다.
+name: 메신저 알림 보내기
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: notify
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: 때가 된 알림 보내기
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+          NOTIFY_SECRET: ${{ secrets.NOTIFY_SECRET }}
+        run: |
+          if [ -z "$APP_URL" ] || [ -z "$NOTIFY_SECRET" ]; then echo "APP_URL / NOTIFY_SECRET secret 이 없어서 건너뜀"; exit 0; fi
+          curl -fsS -X POST "${APP_URL%/}/api/notify?run=1" -H "x-notify-secret: $NOTIFY_SECRET" --max-time 90

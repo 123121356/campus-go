@@ -10,7 +10,7 @@
 
 ## 2. 해결: 한 번 물으면 AI 에이전트가 직접 찾아서 처리
 
-첫 화면은 **AI 비서 + 오늘의 대시보드**입니다(상단 ✦AI 아이콘). AI(Gemini)가 질문을 이해하고 **도구 12개를 스스로 골라 실행**한 뒤(화면에 "🗓 시간표 확인 → 🧭 경로 계산" 같은 단계가 보임) 실제 데이터로 답하고, 지도에 핀·경로를 그립니다.
+AI는 **3D 캠퍼스 걷기 모드의 🤖 AI 요정(T키)** 하나로 모았습니다. 지도·검색의 "AI에게 물어보기"를 누르면 3D로 넘어가 요정이 바로 답합니다. AI(Gemini)가 질문을 이해하고 **도구 17개를 스스로 골라 실행**한 뒤(화면에 "🗓 시간표 확인 → 🧭 경로 계산" 같은 단계가 보임) 실제 데이터로 답하고, 지도에 핀·경로를 그립니다.
 
 | # | 기능 | 에이전트 도구 | 데이터 |
 |---|---|---|---|
@@ -20,7 +20,8 @@
 | 4 | **AI 학교 행정 비서** — 장학금 자격 정리, 수강신청·계절학기·학점교류·전과·부복수전공 일정, 공지 요약, 마감 D-day | `search_school_info` | **강원대 홈페이지 공지(일반·학사·장학·행사) 실시간 수집** + 2026 학사일정 58건 |
 | 5 | **캠퍼스 커뮤니티** — 분실물·중고거래·팀원모집·동아리·행사·주변정보·학식메뉴, AI에게 "분실물 올려줘" | `community` | 사용자 글 + 학교 행사 공지 |
 | 6 | **실시간 현황** — 식당·도서관·버스 혼잡도, 통학버스 추정 위치 | `campus_status` `report_status` `get_bus` | **[제보]·[시간대 추정]·[시간표 추정]을 구분해 표시** (센서 데이터가 없음을 숨기지 않음) |
-| 7 | **나만의 대시보드** — 날씨, 다음 수업, 후문 버스, 실시간 현황, 학교 공지(D-day), 학사일정, **AI 추천 일정** | 전체 | Open-Meteo 날씨·미세먼지 |
+| 7 | **메신저로 받기 (텔레그램·디스코드)** — "매일 7시에 날씨·오늘 수업 보내줘", "수업 15분 전에 알려줘", "장학 공지 새로 뜨면 알려줘", "3시에 과제 제출 알려줘". 요정이 **한 번만 / 주기적으로**를 먼저 묻고, 주기 알림은 서버가 보낼 때마다 최신 데이터로 새로 만듦 | `messenger_link` `send_message` `subscribe` `my_subscriptions` | Telegram Bot API, Discord 웹후크, Upstash Redis, GitHub Actions(15분마다) |
+| 8 | **3D 캠퍼스를 돌아다니는 학생 NPC 30명** — 자유롭게 걷다가 서로 만나면 '요즘 화제'(밈·유행·경제·뉴스·자격증 등)를 주고받고 혼잣말도 함. 가까이 가 **E키**를 누르면 그 학생이 들은 소식을 알려 줌(엿듣기). 그중 최대 20%(머리 위 표시가 하늘색)는 AI 뉴스·논문을 주제로 **여러 줄 토론**을 주고받음. 내용은 6시간마다 유튜브·구글 트렌드·커뮤니티·네이버에서 학습 | `get_trends` | `tools/learn-trends.mjs` → `data/trends.json` (원문 미저장, 유해 표현 2중 필터) + 학습 전엔 기본 상식 대사 |
 
 **중복 정리:** 시설 혼잡도(3)·식당 혼잡도/건물 이용 현황(6)은 `campus_status` 하나로, 교내 행사(5·6)는 학교 행사 공지 + 커뮤니티로, 다음 수업(1·2·7)은 `get_schedule` 하나로, 셔틀 위치(6)·버스 도착(7)은 `get_bus` 하나로 합쳤습니다.
 
@@ -40,7 +41,7 @@
 
 ```
 index.html  styles.css  app.js     ← 프런트(의존성 없음, Leaflet CDN)
-ai.js                              ← AI 에이전트(도구 12개)·대시보드·시간표·커뮤니티
+ai.js                              ← AI 에이전트 도구 17개 (3D AI 요정 npc.js 가 사용)
 api/agent.js  POST /api/agent      ← Gemini 함수 호출 프록시(키는 서버에만), GET ?probe=1 모델 상태 확인
 api/school.js GET  /api/school     ← 강원대 공지 실시간 수집(삼척·전체 캠퍼스)
 data/school.json  data/calendar.json ← 공지 저장본, 2026 학사일정
@@ -49,6 +50,7 @@ data/bus.json                      ← 정류장·노선·예비 시간표
 api/bus.js    GET /api/bus?nodeId= | ?name=강원대   (TAGO 도착정보)
 api/stops.js  GET /api/stops?name=강원대 | ?cities=1 (정류소 nodeId 찾기)
 api/chat.js   POST /api/chat                        (Gemini → Groq)
+api/notify.js POST /api/notify                      ← 메신저 연결·보내기·구독, ?run=1 주기 실행 (.github/workflows/notify.yml)
 dev-server.js 로컬 실행용 (node dev-server.js)
 ```
 API 키는 서버 환경변수에만 있고 브라우저로 내려가지 않습니다.
@@ -126,3 +128,14 @@ node tools/build-floors.js      ← data/floors.json 자동 생성
   `.github/workflows/daily-learn.yml`(원본은 `tools/daily-learn.yml`, `learn-now.bat` 첫 실행 때 자동 복사) 이 매일 06:00(KST)에 돌고 결과를 커밋합니다. Actions 탭에서 수동 실행도 가능.
 - `GEMINI_API_KEY` 가 없으면 규칙 기반(정규식)으로 마감일·요약을 뽑습니다.
 - 학교 사이트를 하나도 못 읽은 날은 기존 지식베이스를 덮어쓰지 않고 실패로 끝납니다.
+
+## 요즘 화제 학습 (6시간마다, 3D NPC 대사)
+
+```
+디시 갤러리 제목·구글 트렌드 RSS·유튜브 인기·네이버 데이터랩 ──(6시간마다)──▶ tools/learn-trends.mjs
+   robots.txt 확인 · 2~3.5초 간격 · 403/429면 중단          1) 수집  2) 유해 표현 거르기
+                                                          3) Gemini: 주제 요약 + NPC 대사(분위기로만 말하기)
+                                                          4) 누적: data/trends.json (며칠째 화제인지, 식는 화제)
+                                     │
+                 3D 건물 NPC 말풍선(📰) · AI 요정 get_trends · 메신저 구독(trends)
+```

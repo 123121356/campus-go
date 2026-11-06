@@ -1,0 +1,32 @@
+{
+  "_note": "트렌드 학습(tools/learn-trends.mjs) 설정. 3D 캠퍼스 학생 NPC들이 이 내용으로 서로 대화하고 혼잣말을 합니다. 자유롭게 고쳐도 됩니다. dc 갤러리 id 는 갤러리 주소의 ?id= 뒤 값입니다. type: major(일반 /board/lists), minor(마이너 /mgallery/board/lists), mini(미니 /mini/board/lists). recommendOnly=true 면 개념글(추천 많은 글)만 읽어 잡담·욕설이 줄어듭니다.",
+  "dc": {
+    "enabled": true,
+    "pagesPerGallery": 1,
+    "delaySec": [2, 3.5],
+    "galleries": [
+      { "id": "launch", "type": "minor", "name": "취업·진로 이슈", "topic": "job", "recommendOnly": false },
+      { "id": "programming", "type": "major", "name": "프로그래밍", "topic": "job", "recommendOnly": true }
+    ]
+  },
+  "googleTrends": { "enabled": true, "geo": "KR", "max": 25 },
+  "youtube": { "enabled": true, "regionCode": "KR", "max": 40 },
+  "naverDatalab": {
+    "enabled": true,
+    "keywordGroups": [
+      { "groupName": "취업", "keywords": ["취업", "채용", "공채"] },
+      { "groupName": "자소서·면접", "keywords": ["자소서", "자기소개서", "면접"] },
+      { "groupName": "공기업·공무원", "keywords": ["공기업", "공무원", "NCS"] },
+      { "groupName": "토익·어학", "keywords": ["토익", "토익스피킹", "오픽"] },
+      { "groupName": "IT자격증", "keywords": ["정보처리기사", "컴활", "SQLD"] },
+      { "groupName": "인턴·일경험", "keywords": ["인턴", "청년일경험", "현장실습"] },
+      { "groupName": "계절학기·학점교류", "keywords": ["계절학기", "학점교류"] },
+      { "groupName": "장학금·지원금", "keywords": ["국가장학금", "장학금", "청년지원금"] },
+      { "groupName": "경제·금리", "keywords": ["금리", "환율", "물가"] },
+      { "groupName": "재테크·적금", "keywords": ["청년적금", "주식", "재테크"] },
+      { "groupName": "AI·IT트렌드", "keywords": ["인공지능", "챗봇", "코딩"] }
+    ]
+  },
+  "keepDays": 4,
+  "maxTopics": 40
+}
