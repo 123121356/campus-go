@@ -1,9 +1,191 @@
 {
- "_note": "tools/learn-trends.mjs 가 만든 파일. 3D NPC 대사·AI 요정(get_trends)이 씁니다. 원문 글 제목은 저장하지 않고 AI가 요약한 주제만 담습니다. learn-trends.bat 을 한 번 실행하면 채워집니다.",
- "updatedAt": null,
- "mode": null,
- "sources": {},
- "sourceLabels": { "dc": "디시인사이드 커뮤니티", "google": "구글 트렌드", "youtube": "유튜브 인기 급상승", "naver": "네이버 데이터랩" },
- "topics": [],
- "runs": []
+ "_note": "tools/learn-trends.mjs 가 만든 파일. 3D NPC 대사·AI 요정(get_trends)이 씁니다. 원문 글 제목은 저장하지 않고 AI가 요약한 주제만 담습니다.",
+ "updatedAt": "2026-11-06T14:24:45.717Z",
+ "mode": "rule",
+ "sources": {
+  "dc": {
+   "ok": true,
+   "used": 48,
+   "note": "취업·진로 이슈: HTTP 500 · 프로그래밍 p1: 50개 중 48개 사용"
+  },
+  "google": {
+   "ok": true,
+   "used": 9,
+   "note": "10개 중 9개 사용"
+  },
+  "youtube": {
+   "ok": false,
+   "used": 0,
+   "note": "YOUTUBE_API_KEY 없음 — 건너뜀"
+  },
+  "naver": {
+   "ok": false,
+   "used": 0,
+   "note": "NAVER_CLIENT_ID/SECRET 없음 — 건너뜀"
+  }
+ },
+ "sourceLabels": {
+  "dc": "디시인사이드 커뮤니티",
+  "google": "구글 트렌드",
+  "youtube": "유튜브 인기 급상승",
+  "naver": "네이버 데이터랩"
+ },
+ "topics": [
+  {
+   "id": "t1",
+   "title": "장유빈",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '장유빈' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-06",
+   "lastSeen": "2026-11-06",
+   "days": 1
+  },
+  {
+   "id": "t2",
+   "title": "이혜정",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '이혜정' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-06",
+   "lastSeen": "2026-11-06",
+   "days": 1
+  },
+  {
+   "id": "t3",
+   "title": "장찬희",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '장찬희' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-06",
+   "lastSeen": "2026-11-06",
+   "days": 1
+  },
+  {
+   "id": "t4",
+   "title": "현장르포 특종세상",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '현장르포 특종세상' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-06",
+   "lastSeen": "2026-11-06",
+   "days": 1
+  },
+  {
+   "id": "t5",
+   "title": "sbs",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 'sbs' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-06",
+   "lastSeen": "2026-11-06",
+   "days": 1
+  },
+  {
+   "id": "t6",
+   "title": "류효영",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '류효영' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-06",
+   "lastSeen": "2026-11-06",
+   "days": 1
+  },
+  {
+   "id": "t7",
+   "title": "박승규",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '박승규' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-06",
+   "lastSeen": "2026-11-06",
+   "days": 1
+  },
+  {
+   "id": "t8",
+   "title": "마이클세일러",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '마이클세일러' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-06",
+   "lastSeen": "2026-11-06",
+   "days": 1
+  },
+  {
+   "id": "t9",
+   "title": "취업 커뮤니티 화제",
+   "category": "job",
+   "summary": "자주 나온 단어: AI, 개발자",
+   "sources": [
+    "dc"
+   ],
+   "heat": 3,
+   "lines": [
+    "취업 커뮤니티에서 요즘 'AI' 얘기가 많아요.",
+    "취업 커뮤니티에서 요즘 '개발자' 얘기가 많아요."
+   ],
+   "firstSeen": "2026-11-06",
+   "lastSeen": "2026-11-06",
+   "days": 1
+  }
+ ],
+ "runs": [
+  {
+   "at": "2026-11-06T14:24:45.717Z",
+   "mode": "rule",
+   "topics": 9,
+   "ok": [
+    "dc",
+    "google"
+   ]
+  }
+ ]
 }
