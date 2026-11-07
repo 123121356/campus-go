@@ -1,6 +1,6 @@
 {
  "_note": "tools/learn-trends.mjs 가 만든 파일. 3D NPC 대사·AI 요정(get_trends)이 씁니다. 원문 글 제목은 저장하지 않고 AI가 요약한 주제만 담습니다.",
- "updatedAt": "2026-11-06T23:15:45.716Z",
+ "updatedAt": "2026-11-07T06:12:18.561Z",
  "mode": "rule",
  "sources": {
   "dc": {
@@ -33,7 +33,7 @@
  "topics": [
   {
    "id": "t1",
-   "title": "적금",
+   "title": "장진혁",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -41,7 +41,7 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '적금' 검색이 많이 늘었대요 🔎"
+    "요즘 '장진혁' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-07",
    "lastSeen": "2026-11-07",
@@ -49,7 +49,7 @@
   },
   {
    "id": "t2",
-   "title": "하지수",
+   "title": "kt vs samsung",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -57,7 +57,7 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '하지수' 검색이 많이 늘었대요 🔎"
+    "요즘 'kt vs samsung' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-07",
    "lastSeen": "2026-11-07",
@@ -65,15 +65,15 @@
   },
   {
    "id": "t3",
-   "title": "치지직",
+   "title": "허미미",
    "category": "trend",
-   "summary": "구글 인기 검색어 (검색 2000+)",
+   "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
     "google"
    ],
    "heat": 3,
    "lines": [
-    "요즘 '치지직' 검색이 많이 늘었대요 🔎"
+    "요즘 '허미미' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-07",
    "lastSeen": "2026-11-07",
@@ -81,23 +81,7 @@
   },
   {
    "id": "t4",
-   "title": "서영교",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '서영교' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1
-  },
-  {
-   "id": "t5",
-   "title": "토트넘 홋스퍼 fc",
+   "title": "배트맨",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 500+)",
    "sources": [
@@ -105,7 +89,23 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '토트넘 홋스퍼 fc' 검색이 많이 늘었대요 🔎"
+    "요즘 '배트맨' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-07",
+   "lastSeen": "2026-11-07",
+   "days": 1
+  },
+  {
+   "id": "t5",
+   "title": "삼전 닉스",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 5000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '삼전 닉스' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-07",
    "lastSeen": "2026-11-07",
@@ -113,7 +113,7 @@
   },
   {
    "id": "t6",
-   "title": "옥스퍼드 시티 fc 대 레스",
+   "title": "한국대학신문",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -121,7 +121,7 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '옥스퍼드 시티 fc 대 레스터 시티' 검색이 많이 늘었대요 🔎"
+    "요즘 '한국대학신문' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-07",
    "lastSeen": "2026-11-07",
@@ -129,7 +129,7 @@
   },
   {
    "id": "t7",
-   "title": "송해",
+   "title": "환자",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -137,7 +137,7 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '송해' 검색이 많이 늘었대요 🔎"
+    "요즘 '환자' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-07",
    "lastSeen": "2026-11-07",
@@ -145,7 +145,7 @@
   },
   {
    "id": "t8",
-   "title": "데이터 센터",
+   "title": "기만",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -153,7 +153,7 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '데이터 센터' 검색이 많이 늘었대요 🔎"
+    "요즘 '기만' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-07",
    "lastSeen": "2026-11-07",
@@ -179,13 +179,149 @@
   },
   {
    "id": "t1",
-   "title": "장유빈",
+   "title": "적금",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '적금' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-07",
+   "lastSeen": "2026-11-07",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t2",
+   "title": "하지수",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '하지수' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-07",
+   "lastSeen": "2026-11-07",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t3",
+   "title": "치지직",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 2000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '치지직' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-07",
+   "lastSeen": "2026-11-07",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t4",
+   "title": "서영교",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '서영교' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-07",
+   "lastSeen": "2026-11-07",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t5",
+   "title": "토트넘 홋스퍼 fc",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 500+)",
    "sources": [
     "google"
    ],
    "heat": 2,
+   "lines": [
+    "요즘 '토트넘 홋스퍼 fc' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-07",
+   "lastSeen": "2026-11-07",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t6",
+   "title": "옥스퍼드 시티 fc 대 레스",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '옥스퍼드 시티 fc 대 레스터 시티' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-07",
+   "lastSeen": "2026-11-07",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t7",
+   "title": "송해",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '송해' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-07",
+   "lastSeen": "2026-11-07",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t8",
+   "title": "데이터 센터",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '데이터 센터' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-07",
+   "lastSeen": "2026-11-07",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t1",
+   "title": "장유빈",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 1,
    "lines": [
     "요즘 '장유빈' 검색이 많이 늘었대요 🔎"
    ],
@@ -202,7 +338,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '이혜정' 검색이 많이 늘었대요 🔎"
    ],
@@ -219,7 +355,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '장찬희' 검색이 많이 늘었대요 🔎"
    ],
@@ -236,7 +372,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '현장르포 특종세상' 검색이 많이 늘었대요 🔎"
    ],
@@ -253,7 +389,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 'sbs' 검색이 많이 늘었대요 🔎"
    ],
@@ -270,7 +406,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '류효영' 검색이 많이 늘었대요 🔎"
    ],
@@ -287,7 +423,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '박승규' 검색이 많이 늘었대요 🔎"
    ],
@@ -304,7 +440,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '마이클세일러' 검색이 많이 늘었대요 🔎"
    ],
@@ -315,6 +451,15 @@
   }
  ],
  "runs": [
+  {
+   "at": "2026-11-07T06:12:18.561Z",
+   "mode": "rule",
+   "topics": 9,
+   "ok": [
+    "dc",
+    "google"
+   ]
+  },
   {
    "at": "2026-11-06T23:15:45.716Z",
    "mode": "rule",
