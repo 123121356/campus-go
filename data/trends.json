@@ -1,6 +1,6 @@
 {
  "_note": "tools/learn-trends.mjs 가 만든 파일. 3D NPC 대사·AI 요정(get_trends)이 씁니다. 원문 글 제목은 저장하지 않고 AI가 요약한 주제만 담습니다.",
- "updatedAt": "2026-11-08T06:16:56.864Z",
+ "updatedAt": "2026-11-08T13:40:41.550Z",
  "mode": "rule",
  "sources": {
   "dc": {
@@ -33,7 +33,7 @@
  "topics": [
   {
    "id": "t1",
-   "title": "sk그룹",
+   "title": "철도망",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 100+)",
    "sources": [
@@ -41,7 +41,7 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 'sk그룹' 검색이 많이 늘었대요 🔎"
+    "요즘 '철도망' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-08",
    "lastSeen": "2026-11-08",
@@ -49,15 +49,15 @@
   },
   {
    "id": "t2",
-   "title": "서세원",
+   "title": "제주항공",
    "category": "trend",
-   "summary": "구글 인기 검색어 (검색 2000+)",
+   "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
     "google"
    ],
    "heat": 3,
    "lines": [
-    "요즘 '서세원' 검색이 많이 늘었대요 🔎"
+    "요즘 '제주항공' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-08",
    "lastSeen": "2026-11-08",
@@ -65,7 +65,7 @@
   },
   {
    "id": "t3",
-   "title": "서울 sk 대 원주 db",
+   "title": "malut united vs",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 500+)",
    "sources": [
@@ -73,7 +73,7 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '서울 sk 대 원주 db' 검색이 많이 늘었대요 🔎"
+    "요즘 'malut united vs persib bandung' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-08",
    "lastSeen": "2026-11-08",
@@ -81,15 +81,15 @@
   },
   {
    "id": "t4",
-   "title": "울산 현대모비스 대 안양 정",
+   "title": "국민 총소득",
    "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
+   "summary": "구글 인기 검색어 (검색 1000+)",
    "sources": [
     "google"
    ],
    "heat": 3,
    "lines": [
-    "요즘 '울산 현대모비스 대 안양 정관장' 검색이 많이 늘었대요 🔎"
+    "요즘 '국민 총소득' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-08",
    "lastSeen": "2026-11-08",
@@ -97,15 +97,15 @@
   },
   {
    "id": "t5",
-   "title": "한국시리즈 중계",
+   "title": "최해천 교수",
    "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
+   "summary": "구글 인기 검색어 (검색 500+)",
    "sources": [
     "google"
    ],
    "heat": 3,
    "lines": [
-    "요즘 '한국시리즈 중계' 검색이 많이 늘었대요 🔎"
+    "요즘 '최해천 교수' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-08",
    "lastSeen": "2026-11-08",
@@ -113,7 +113,7 @@
   },
   {
    "id": "t6",
-   "title": "스테픈 커리",
+   "title": "김세레나",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -121,7 +121,7 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '스테픈 커리' 검색이 많이 늘었대요 🔎"
+    "요즘 '김세레나' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-08",
    "lastSeen": "2026-11-08",
@@ -129,15 +129,15 @@
   },
   {
    "id": "t7",
-   "title": "경호원",
+   "title": "박한이",
    "category": "trend",
-   "summary": "구글 인기 검색어 (검색 2000+)",
+   "summary": "구글 인기 검색어 (검색 100+)",
    "sources": [
     "google"
    ],
    "heat": 3,
    "lines": [
-    "요즘 '경호원' 검색이 많이 늘었대요 🔎"
+    "요즘 '박한이' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-08",
    "lastSeen": "2026-11-08",
@@ -145,7 +145,7 @@
   },
   {
    "id": "t8",
-   "title": "kt vs samsung",
+   "title": "wec",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -153,11 +153,11 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 'kt vs samsung' 검색이 많이 늘었대요 🔎"
+    "요즘 'wec' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-07",
+   "firstSeen": "2026-11-08",
    "lastSeen": "2026-11-08",
-   "days": 2
+   "days": 1
   },
   {
    "id": "t9",
@@ -179,13 +179,149 @@
   },
   {
    "id": "t1",
-   "title": "잠실주공5단지 아파트",
+   "title": "sk그룹",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 'sk그룹' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-08",
+   "lastSeen": "2026-11-08",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t2",
+   "title": "서세원",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 2000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '서세원' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-08",
+   "lastSeen": "2026-11-08",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t3",
+   "title": "서울 sk 대 원주 db",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '서울 sk 대 원주 db' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-08",
+   "lastSeen": "2026-11-08",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t4",
+   "title": "울산 현대모비스 대 안양 정",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
     "google"
    ],
    "heat": 2,
+   "lines": [
+    "요즘 '울산 현대모비스 대 안양 정관장' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-08",
+   "lastSeen": "2026-11-08",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t5",
+   "title": "한국시리즈 중계",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '한국시리즈 중계' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-08",
+   "lastSeen": "2026-11-08",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t6",
+   "title": "스테픈 커리",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '스테픈 커리' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-08",
+   "lastSeen": "2026-11-08",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t7",
+   "title": "경호원",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 2000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '경호원' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-08",
+   "lastSeen": "2026-11-08",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t8",
+   "title": "kt vs samsung",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 'kt vs samsung' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-07",
+   "lastSeen": "2026-11-08",
+   "days": 2,
+   "cooling": true
+  },
+  {
+   "id": "t1",
+   "title": "잠실주공5단지 아파트",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 1,
    "lines": [
     "요즘 '잠실주공5단지 아파트' 검색이 많이 늘었대요 🔎"
    ],
@@ -202,7 +338,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 'valencia vs real madrid' 검색이 많이 늘었대요 🔎"
    ],
@@ -219,7 +355,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '농민' 검색이 많이 늘었대요 🔎"
    ],
@@ -236,7 +372,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '삼성전기' 검색이 많이 늘었대요 🔎"
    ],
@@ -253,7 +389,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 'พยากรณ์อากาศ' 검색이 많이 늘었대요 🔎"
    ],
@@ -270,7 +406,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '이주헌' 검색이 많이 늘었대요 🔎"
    ],
@@ -287,7 +423,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '넷플릭스' 검색이 많이 늘었대요 🔎"
    ],
@@ -304,7 +440,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '2026' 검색이 많이 늘었대요 🔎"
    ],
@@ -567,145 +703,18 @@
    "lastSeen": "2026-11-07",
    "days": 1,
    "cooling": true
-  },
-  {
-   "id": "t1",
-   "title": "적금",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '적금' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t2",
-   "title": "하지수",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '하지수' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t3",
-   "title": "치지직",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 2000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '치지직' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t4",
-   "title": "서영교",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '서영교' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t5",
-   "title": "토트넘 홋스퍼 fc",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '토트넘 홋스퍼 fc' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t6",
-   "title": "옥스퍼드 시티 fc 대 레스",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '옥스퍼드 시티 fc 대 레스터 시티' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t7",
-   "title": "송해",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '송해' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t8",
-   "title": "데이터 센터",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '데이터 센터' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
   }
  ],
  "runs": [
+  {
+   "at": "2026-11-08T13:40:41.550Z",
+   "mode": "rule",
+   "topics": 9,
+   "ok": [
+    "dc",
+    "google"
+   ]
+  },
   {
    "at": "2026-11-08T06:16:56.864Z",
    "mode": "rule",
