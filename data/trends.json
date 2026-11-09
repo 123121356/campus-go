@@ -1,6 +1,6 @@
 {
  "_note": "tools/learn-trends.mjs 가 만든 파일. 3D NPC 대사·AI 요정(get_trends)이 씁니다. 원문 글 제목은 저장하지 않고 AI가 요약한 주제만 담습니다.",
- "updatedAt": "2026-11-08T22:15:35.571Z",
+ "updatedAt": "2026-11-09T06:50:07.629Z",
  "mode": "rule",
  "sources": {
   "dc": {
@@ -10,8 +10,8 @@
   },
   "google": {
    "ok": true,
-   "used": 10,
-   "note": "10개 중 10개 사용"
+   "used": 8,
+   "note": "10개 중 8개 사용"
   },
   "youtube": {
    "ok": false,
@@ -33,7 +33,7 @@
  "topics": [
   {
    "id": "t1",
-   "title": "kbo 리그",
+   "title": "lg전자",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -41,7 +41,7 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 'kbo 리그' 검색이 많이 늘었대요 🔎"
+    "요즘 'lg전자' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-09",
    "lastSeen": "2026-11-09",
@@ -49,71 +49,7 @@
   },
   {
    "id": "t2",
-   "title": "경제",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '경제' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-09",
-   "lastSeen": "2026-11-09",
-   "days": 1
-  },
-  {
-   "id": "t3",
-   "title": "강사",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '강사' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-09",
-   "lastSeen": "2026-11-09",
-   "days": 1
-  },
-  {
-   "id": "t4",
-   "title": "김유정",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '김유정' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-09",
-   "lastSeen": "2026-11-09",
-   "days": 1
-  },
-  {
-   "id": "t5",
-   "title": "카를로스 알카라스",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '카를로스 알카라스' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-09",
-   "lastSeen": "2026-11-09",
-   "days": 1
-  },
-  {
-   "id": "t6",
-   "title": "김연경",
+   "title": "논문",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 1000+)",
    "sources": [
@@ -121,15 +57,31 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '김연경' 검색이 많이 늘었대요 🔎"
+    "요즘 '논문' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-09",
    "lastSeen": "2026-11-09",
    "days": 1
   },
   {
-   "id": "t7",
-   "title": "jensen huang",
+   "id": "t3",
+   "title": "박진혁",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 5000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '박진혁' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-09",
+   "lastSeen": "2026-11-09",
+   "days": 1
+  },
+  {
+   "id": "t4",
+   "title": "catl",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -137,7 +89,55 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 'jensen huang' 검색이 많이 늘었대요 🔎"
+    "요즘 'catl' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-09",
+   "lastSeen": "2026-11-09",
+   "days": 1
+  },
+  {
+   "id": "t5",
+   "title": "윤여정",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 1000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '윤여정' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-09",
+   "lastSeen": "2026-11-09",
+   "days": 1
+  },
+  {
+   "id": "t6",
+   "title": "의과대학",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '의과대학' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-09",
+   "lastSeen": "2026-11-09",
+   "days": 1
+  },
+  {
+   "id": "t7",
+   "title": "아나운서",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 5000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '아나운서' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-09",
    "lastSeen": "2026-11-09",
@@ -145,19 +145,19 @@
   },
   {
    "id": "t8",
-   "title": "พยากรณ์อากาศ",
+   "title": "로켓",
    "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
+   "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
     "google"
    ],
    "heat": 3,
    "lines": [
-    "요즘 'พยากรณ์อากาศ' 검색이 많이 늘었대요 🔎"
+    "요즘 '로켓' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-08",
+   "firstSeen": "2026-11-09",
    "lastSeen": "2026-11-09",
-   "days": 2
+   "days": 1
   },
   {
    "id": "t9",
@@ -179,13 +179,149 @@
   },
   {
    "id": "t1",
-   "title": "철도망",
+   "title": "kbo 리그",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 'kbo 리그' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-09",
+   "lastSeen": "2026-11-09",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t2",
+   "title": "경제",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '경제' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-09",
+   "lastSeen": "2026-11-09",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t3",
+   "title": "강사",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '강사' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-09",
+   "lastSeen": "2026-11-09",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t4",
+   "title": "김유정",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '김유정' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-09",
+   "lastSeen": "2026-11-09",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t5",
+   "title": "카를로스 알카라스",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '카를로스 알카라스' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-09",
+   "lastSeen": "2026-11-09",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t6",
+   "title": "김연경",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 1000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '김연경' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-09",
+   "lastSeen": "2026-11-09",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t7",
+   "title": "jensen huang",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 'jensen huang' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-09",
+   "lastSeen": "2026-11-09",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t8",
+   "title": "พยากรณ์อากาศ",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 100+)",
    "sources": [
     "google"
    ],
    "heat": 2,
+   "lines": [
+    "요즘 'พยากรณ์อากาศ' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-08",
+   "lastSeen": "2026-11-09",
+   "days": 2,
+   "cooling": true
+  },
+  {
+   "id": "t1",
+   "title": "철도망",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 1,
    "lines": [
     "요즘 '철도망' 검색이 많이 늘었대요 🔎"
    ],
@@ -202,7 +338,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '제주항공' 검색이 많이 늘었대요 🔎"
    ],
@@ -219,7 +355,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 'malut united vs persib bandung' 검색이 많이 늘었대요 🔎"
    ],
@@ -236,7 +372,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '국민 총소득' 검색이 많이 늘었대요 🔎"
    ],
@@ -253,7 +389,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '최해천 교수' 검색이 많이 늘었대요 🔎"
    ],
@@ -270,7 +406,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '김세레나' 검색이 많이 늘었대요 🔎"
    ],
@@ -287,7 +423,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '박한이' 검색이 많이 늘었대요 🔎"
    ],
@@ -304,7 +440,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 'wec' 검색이 많이 늘었대요 🔎"
    ],
@@ -567,145 +703,18 @@
    "lastSeen": "2026-11-08",
    "days": 1,
    "cooling": true
-  },
-  {
-   "id": "t1",
-   "title": "agf",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 'agf' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t2",
-   "title": "persija jakarta",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 'persija jakarta vs persebaya' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t3",
-   "title": "내일 날씨",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '내일 날씨' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t4",
-   "title": "로또1249",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '로또1249' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t5",
-   "title": "leeds vs spurs",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 'leeds vs spurs' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t6",
-   "title": "유방암",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 1000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '유방암' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t7",
-   "title": "weather tomorro",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 5000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 'weather tomorrow' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t8",
-   "title": "погода завтра",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 'погода завтра' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-07",
-   "days": 1,
-   "cooling": true
   }
  ],
  "runs": [
+  {
+   "at": "2026-11-09T06:50:07.629Z",
+   "mode": "rule",
+   "topics": 9,
+   "ok": [
+    "dc",
+    "google"
+   ]
+  },
   {
    "at": "2026-11-08T22:15:35.571Z",
    "mode": "rule",
