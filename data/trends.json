@@ -1,6 +1,6 @@
 {
  "_note": "tools/learn-trends.mjs 가 만든 파일. 3D NPC 대사·AI 요정(get_trends)이 씁니다. 원문 글 제목은 저장하지 않고 AI가 요약한 주제만 담습니다.",
- "updatedAt": "2026-11-10T07:28:52.790Z",
+ "updatedAt": "2026-11-10T19:51:09.675Z",
  "mode": "rule",
  "sources": {
   "dc": {
@@ -33,7 +33,7 @@
  "topics": [
   {
    "id": "t1",
-   "title": "kbo 리그",
+   "title": "전원주",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 2000+)",
    "sources": [
@@ -41,47 +41,95 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 'kbo 리그' 검색이 많이 늘었대요 🔎"
+    "요즘 '전원주' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-09",
-   "lastSeen": "2026-11-10",
-   "days": 2
+   "firstSeen": "2026-11-11",
+   "lastSeen": "2026-11-11",
+   "days": 1
   },
   {
    "id": "t2",
-   "title": "대만 해협",
+   "title": "넥슨",
    "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
+   "summary": "구글 인기 검색어 (검색 100+)",
    "sources": [
     "google"
    ],
    "heat": 3,
    "lines": [
-    "요즘 '대만 해협' 검색이 많이 늘었대요 🔎"
+    "요즘 '넥슨' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-10",
-   "lastSeen": "2026-11-10",
+   "firstSeen": "2026-11-11",
+   "lastSeen": "2026-11-11",
    "days": 1
   },
   {
    "id": "t3",
-   "title": "골프존카운티",
+   "title": "espn",
    "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
+   "summary": "구글 인기 검색어 (검색 100+)",
    "sources": [
     "google"
    ],
    "heat": 3,
    "lines": [
-    "요즘 '골프존카운티' 검색이 많이 늘었대요 🔎"
+    "요즘 'espn' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-10",
-   "lastSeen": "2026-11-10",
+   "firstSeen": "2026-11-11",
+   "lastSeen": "2026-11-11",
    "days": 1
   },
   {
    "id": "t4",
-   "title": "공포탄",
+   "title": "이재진",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '이재진' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-11",
+   "lastSeen": "2026-11-11",
+   "days": 1
+  },
+  {
+   "id": "t5",
+   "title": "로스앤젤레스 다저스",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '로스앤젤레스 다저스' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-11",
+   "lastSeen": "2026-11-11",
+   "days": 1
+  },
+  {
+   "id": "t6",
+   "title": "엘리자베스 홈즈",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '엘리자베스 홈즈' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-11",
+   "lastSeen": "2026-11-11",
+   "days": 1
+  },
+  {
+   "id": "t7",
+   "title": "추위",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 1000+)",
    "sources": [
@@ -89,47 +137,15 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '공포탄' 검색이 많이 늘었대요 🔎"
+    "요즘 '추위' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-10",
-   "lastSeen": "2026-11-10",
+   "firstSeen": "2026-11-11",
+   "lastSeen": "2026-11-11",
    "days": 1
   },
   {
-   "id": "t5",
-   "title": "안영명",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '안영명' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-10",
-   "lastSeen": "2026-11-10",
-   "days": 1
-  },
-  {
-   "id": "t6",
-   "title": "이세계아이돌",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '이세계아이돌' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-10",
-   "lastSeen": "2026-11-10",
-   "days": 1
-  },
-  {
-   "id": "t7",
-   "title": "시어머니",
+   "id": "t8",
+   "title": "임준우",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 2000+)",
    "sources": [
@@ -137,26 +153,10 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '시어머니' 검색이 많이 늘었대요 🔎"
+    "요즘 '임준우' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-10",
-   "lastSeen": "2026-11-10",
-   "days": 1
-  },
-  {
-   "id": "t8",
-   "title": "뷰익",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '뷰익' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-10",
-   "lastSeen": "2026-11-10",
+   "firstSeen": "2026-11-11",
+   "lastSeen": "2026-11-11",
    "days": 1
   },
   {
@@ -174,8 +174,144 @@
     "취업 커뮤니티에서 요즘 '개발자' 얘기가 많아요."
    ],
    "firstSeen": "2026-11-06",
+   "lastSeen": "2026-11-11",
+   "days": 6
+  },
+  {
+   "id": "t1",
+   "title": "kbo 리그",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 2000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 'kbo 리그' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-09",
    "lastSeen": "2026-11-10",
-   "days": 5
+   "days": 2,
+   "cooling": true
+  },
+  {
+   "id": "t2",
+   "title": "대만 해협",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '대만 해협' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t3",
+   "title": "골프존카운티",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '골프존카운티' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t4",
+   "title": "공포탄",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 1000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '공포탄' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t5",
+   "title": "안영명",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '안영명' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t6",
+   "title": "이세계아이돌",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '이세계아이돌' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t7",
+   "title": "시어머니",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 2000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '시어머니' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t8",
+   "title": "뷰익",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '뷰익' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
   },
   {
    "id": "t1",
@@ -185,7 +321,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 'fable 5.2' 검색이 많이 늘었대요 🔎"
    ],
@@ -202,7 +338,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '알테오젠' 검색이 많이 늘었대요 🔎"
    ],
@@ -219,7 +355,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '황성빈' 검색이 많이 늘었대요 🔎"
    ],
@@ -236,7 +372,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '그랜드 테프트 오토 vi' 검색이 많이 늘었대요 🔎"
    ],
@@ -253,7 +389,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '송중기' 검색이 많이 늘었대요 🔎"
    ],
@@ -270,7 +406,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '커피' 검색이 많이 늘었대요 🔎"
    ],
@@ -287,7 +423,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '김예건' 검색이 많이 늘었대요 🔎"
    ],
@@ -304,7 +440,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 'พยากรณ์อากาศ' 검색이 많이 늘었대요 🔎"
    ],
@@ -567,145 +703,18 @@
    "lastSeen": "2026-11-08",
    "days": 1,
    "cooling": true
-  },
-  {
-   "id": "t2",
-   "title": "제주항공",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '제주항공' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t3",
-   "title": "malut united vs",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 'malut united vs persib bandung' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t4",
-   "title": "국민 총소득",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 1000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '국민 총소득' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t5",
-   "title": "최해천 교수",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '최해천 교수' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t6",
-   "title": "김세레나",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '김세레나' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t7",
-   "title": "박한이",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '박한이' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t8",
-   "title": "wec",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 'wec' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t1",
-   "title": "sk그룹",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 'sk그룹' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
   }
  ],
  "runs": [
+  {
+   "at": "2026-11-10T19:51:09.675Z",
+   "mode": "rule",
+   "topics": 9,
+   "ok": [
+    "dc",
+    "google"
+   ]
+  },
   {
    "at": "2026-11-10T07:28:52.790Z",
    "mode": "rule",
