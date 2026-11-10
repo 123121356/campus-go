@@ -1,6 +1,6 @@
 {
  "_note": "tools/learn-trends.mjs 가 만든 파일. 3D NPC 대사·AI 요정(get_trends)이 씁니다. 원문 글 제목은 저장하지 않고 AI가 요약한 주제만 담습니다.",
- "updatedAt": "2026-11-09T22:29:38.828Z",
+ "updatedAt": "2026-11-10T07:28:52.790Z",
  "mode": "rule",
  "sources": {
   "dc": {
@@ -33,71 +33,7 @@
  "topics": [
   {
    "id": "t1",
-   "title": "fable 5.2",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 'fable 5.2' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-10",
-   "lastSeen": "2026-11-10",
-   "days": 1
-  },
-  {
-   "id": "t2",
-   "title": "알테오젠",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 1000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '알테오젠' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-10",
-   "lastSeen": "2026-11-10",
-   "days": 1
-  },
-  {
-   "id": "t3",
-   "title": "황성빈",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '황성빈' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-10",
-   "lastSeen": "2026-11-10",
-   "days": 1
-  },
-  {
-   "id": "t4",
-   "title": "그랜드 테프트 오토 vi",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '그랜드 테프트 오토 vi' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-10",
-   "lastSeen": "2026-11-10",
-   "days": 1
-  },
-  {
-   "id": "t5",
-   "title": "송중기",
+   "title": "kbo 리그",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 2000+)",
    "sources": [
@@ -105,15 +41,47 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '송중기' 검색이 많이 늘었대요 🔎"
+    "요즘 'kbo 리그' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-09",
+   "lastSeen": "2026-11-10",
+   "days": 2
+  },
+  {
+   "id": "t2",
+   "title": "대만 해협",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '대만 해협' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-10",
    "lastSeen": "2026-11-10",
    "days": 1
   },
   {
-   "id": "t6",
-   "title": "커피",
+   "id": "t3",
+   "title": "골프존카운티",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '골프존카운티' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1
+  },
+  {
+   "id": "t4",
+   "title": "공포탄",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 1000+)",
    "sources": [
@@ -121,15 +89,15 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '커피' 검색이 많이 늘었대요 🔎"
+    "요즘 '공포탄' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-10",
    "lastSeen": "2026-11-10",
    "days": 1
   },
   {
-   "id": "t7",
-   "title": "김예건",
+   "id": "t5",
+   "title": "안영명",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -137,7 +105,39 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '김예건' 검색이 많이 늘었대요 🔎"
+    "요즘 '안영명' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1
+  },
+  {
+   "id": "t6",
+   "title": "이세계아이돌",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '이세계아이돌' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1
+  },
+  {
+   "id": "t7",
+   "title": "시어머니",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 2000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '시어머니' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-10",
    "lastSeen": "2026-11-10",
@@ -145,19 +145,19 @@
   },
   {
    "id": "t8",
-   "title": "พยากรณ์อากาศ",
+   "title": "뷰익",
    "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
+   "summary": "구글 인기 검색어 (검색 500+)",
    "sources": [
     "google"
    ],
    "heat": 3,
    "lines": [
-    "요즘 'พยากรณ์อากาศ' 검색이 많이 늘었대요 🔎"
+    "요즘 '뷰익' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-08",
+   "firstSeen": "2026-11-10",
    "lastSeen": "2026-11-10",
-   "days": 3
+   "days": 1
   },
   {
    "id": "t9",
@@ -179,13 +179,149 @@
   },
   {
    "id": "t1",
-   "title": "lg전자",
+   "title": "fable 5.2",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 'fable 5.2' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t2",
+   "title": "알테오젠",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 1000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '알테오젠' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t3",
+   "title": "황성빈",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '황성빈' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t4",
+   "title": "그랜드 테프트 오토 vi",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '그랜드 테프트 오토 vi' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t5",
+   "title": "송중기",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 2000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '송중기' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t6",
+   "title": "커피",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 1000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '커피' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t7",
+   "title": "김예건",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
     "google"
    ],
    "heat": 2,
+   "lines": [
+    "요즘 '김예건' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-10",
+   "lastSeen": "2026-11-10",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t8",
+   "title": "พยากรณ์อากาศ",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 'พยากรณ์อากาศ' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-08",
+   "lastSeen": "2026-11-10",
+   "days": 3,
+   "cooling": true
+  },
+  {
+   "id": "t1",
+   "title": "lg전자",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 1,
    "lines": [
     "요즘 'lg전자' 검색이 많이 늘었대요 🔎"
    ],
@@ -202,7 +338,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '논문' 검색이 많이 늘었대요 🔎"
    ],
@@ -219,7 +355,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '박진혁' 검색이 많이 늘었대요 🔎"
    ],
@@ -236,7 +372,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 'catl' 검색이 많이 늘었대요 🔎"
    ],
@@ -253,7 +389,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '윤여정' 검색이 많이 늘었대요 🔎"
    ],
@@ -270,7 +406,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '의과대학' 검색이 많이 늘었대요 🔎"
    ],
@@ -287,7 +423,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '아나운서' 검색이 많이 늘었대요 🔎"
    ],
@@ -304,26 +440,9 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
-   "lines": [
-    "요즘 '로켓' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-09",
-   "lastSeen": "2026-11-09",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t1",
-   "title": "kbo 리그",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
    "heat": 1,
    "lines": [
-    "요즘 'kbo 리그' 검색이 많이 늘었대요 🔎"
+    "요즘 '로켓' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-09",
    "lastSeen": "2026-11-09",
@@ -584,128 +703,18 @@
    "lastSeen": "2026-11-08",
    "days": 1,
    "cooling": true
-  },
-  {
-   "id": "t2",
-   "title": "서세원",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 2000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '서세원' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t3",
-   "title": "서울 sk 대 원주 db",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '서울 sk 대 원주 db' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t4",
-   "title": "울산 현대모비스 대 안양 정",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '울산 현대모비스 대 안양 정관장' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t5",
-   "title": "한국시리즈 중계",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '한국시리즈 중계' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t6",
-   "title": "스테픈 커리",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '스테픈 커리' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t7",
-   "title": "경호원",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 2000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '경호원' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-08",
-   "lastSeen": "2026-11-08",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t8",
-   "title": "kt vs samsung",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 'kt vs samsung' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-07",
-   "lastSeen": "2026-11-08",
-   "days": 2,
-   "cooling": true
   }
  ],
  "runs": [
+  {
+   "at": "2026-11-10T07:28:52.790Z",
+   "mode": "rule",
+   "topics": 9,
+   "ok": [
+    "dc",
+    "google"
+   ]
+  },
   {
    "at": "2026-11-09T22:29:38.828Z",
    "mode": "rule",
