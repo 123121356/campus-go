@@ -1,6 +1,6 @@
 {
  "_note": "tools/learn-trends.mjs 가 만든 파일. 3D NPC 대사·AI 요정(get_trends)이 씁니다. 원문 글 제목은 저장하지 않고 AI가 요약한 주제만 담습니다.",
- "updatedAt": "2026-11-13T06:55:42.409Z",
+ "updatedAt": "2026-11-13T19:50:59.713Z",
  "mode": "rule",
  "sources": {
   "dc": {
@@ -10,8 +10,8 @@
   },
   "google": {
    "ok": true,
-   "used": 7,
-   "note": "10개 중 7개 사용"
+   "used": 9,
+   "note": "10개 중 9개 사용"
   },
   "youtube": {
    "ok": false,
@@ -33,7 +33,7 @@
  "topics": [
   {
    "id": "t1",
-   "title": "리트 만점자 ai 안경",
+   "title": "월즈 결승",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -41,31 +41,15 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '리트 만점자 ai 안경' 검색이 많이 늘었대요 🔎"
+    "요즘 '월즈 결승' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-13",
-   "lastSeen": "2026-11-13",
+   "firstSeen": "2026-11-14",
+   "lastSeen": "2026-11-14",
    "days": 1
   },
   {
    "id": "t2",
-   "title": "국기",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '국기' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-13",
-   "lastSeen": "2026-11-13",
-   "days": 1
-  },
-  {
-   "id": "t3",
-   "title": "블랙웰",
+   "title": "정몽구",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 500+)",
    "sources": [
@@ -73,15 +57,15 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '블랙웰' 검색이 많이 늘었대요 🔎"
+    "요즘 '정몽구' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-13",
-   "lastSeen": "2026-11-13",
+   "firstSeen": "2026-11-14",
+   "lastSeen": "2026-11-14",
    "days": 1
   },
   {
-   "id": "t4",
-   "title": "england vs aust",
+   "id": "t3",
+   "title": "오세훈",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 100+)",
    "sources": [
@@ -89,15 +73,15 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 'england vs australia' 검색이 많이 늘었대요 🔎"
+    "요즘 '오세훈' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-13",
-   "lastSeen": "2026-11-13",
+   "firstSeen": "2026-11-14",
+   "lastSeen": "2026-11-14",
    "days": 1
   },
   {
-   "id": "t5",
-   "title": "수도권제1순환고속도로",
+   "id": "t4",
+   "title": "인벤",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -105,31 +89,47 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '수도권제1순환고속도로' 검색이 많이 늘었대요 🔎"
+    "요즘 '인벤' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-13",
-   "lastSeen": "2026-11-13",
+   "firstSeen": "2026-11-14",
+   "lastSeen": "2026-11-14",
    "days": 1
   },
   {
-   "id": "t6",
-   "title": "고용노동부",
+   "id": "t5",
+   "title": "박지현",
    "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
+   "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
     "google"
    ],
    "heat": 3,
    "lines": [
-    "요즘 '고용노동부' 검색이 많이 늘었대요 🔎"
+    "요즘 '박지현' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-13",
-   "lastSeen": "2026-11-13",
+   "firstSeen": "2026-11-14",
+   "lastSeen": "2026-11-14",
+   "days": 1
+  },
+  {
+   "id": "t6",
+   "title": "구성환",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '구성환' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-14",
+   "lastSeen": "2026-11-14",
    "days": 1
   },
   {
    "id": "t7",
-   "title": "한국보훈복지의료공단",
+   "title": "김수현",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 1000+)",
    "sources": [
@@ -137,14 +137,30 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '한국보훈복지의료공단' 검색이 많이 늘었대요 🔎"
+    "요즘 '김수현' 검색이 많이 늘었대요 🔎"
    ],
-   "firstSeen": "2026-11-13",
-   "lastSeen": "2026-11-13",
+   "firstSeen": "2026-11-14",
+   "lastSeen": "2026-11-14",
    "days": 1
   },
   {
    "id": "t8",
+   "title": "대한민국",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '대한민국' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-14",
+   "lastSeen": "2026-11-14",
+   "days": 1
+  },
+  {
+   "id": "t9",
    "title": "취업 커뮤니티 화제",
    "category": "job",
    "summary": "자주 나온 단어: 중소기업, AI, 개발자, 채용, 공무원",
@@ -158,8 +174,127 @@
     "취업 커뮤니티에서 요즘 '개발자' 얘기가 많아요."
    ],
    "firstSeen": "2026-11-06",
+   "lastSeen": "2026-11-14",
+   "days": 9
+  },
+  {
+   "id": "t1",
+   "title": "리트 만점자 ai 안경",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '리트 만점자 ai 안경' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-13",
    "lastSeen": "2026-11-13",
-   "days": 8
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t2",
+   "title": "국기",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '국기' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-13",
+   "lastSeen": "2026-11-13",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t3",
+   "title": "블랙웰",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '블랙웰' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-13",
+   "lastSeen": "2026-11-13",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t4",
+   "title": "england vs aust",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 'england vs australia' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-13",
+   "lastSeen": "2026-11-13",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t5",
+   "title": "수도권제1순환고속도로",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '수도권제1순환고속도로' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-13",
+   "lastSeen": "2026-11-13",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t6",
+   "title": "고용노동부",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '고용노동부' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-13",
+   "lastSeen": "2026-11-13",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t7",
+   "title": "한국보훈복지의료공단",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 1000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '한국보훈복지의료공단' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-13",
+   "lastSeen": "2026-11-13",
+   "days": 1,
+   "cooling": true
   },
   {
    "id": "t1",
@@ -169,7 +304,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '체코 대 스페인' 검색이 많이 늘었대요 🔎"
    ],
@@ -186,7 +321,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '이탈리아 대 프랑스' 검색이 많이 늘었대요 🔎"
    ],
@@ -203,7 +338,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '휘발유' 검색이 많이 늘었대요 🔎"
    ],
@@ -220,7 +355,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '손준호' 검색이 많이 늘었대요 🔎"
    ],
@@ -237,7 +372,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 'outlook' 검색이 많이 늘었대요 🔎"
    ],
@@ -254,7 +389,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '공장' 검색이 많이 늘었대요 🔎"
    ],
@@ -271,7 +406,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '이자' 검색이 많이 늘었대요 🔎"
    ],
@@ -288,7 +423,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '국제 a매치' 검색이 많이 늘었대요 🔎"
    ],
@@ -568,145 +703,18 @@
    "lastSeen": "2026-11-12",
    "days": 1,
    "cooling": true
-  },
-  {
-   "id": "t1",
-   "title": "남편",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 2000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '남편' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-11",
-   "lastSeen": "2026-11-11",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t2",
-   "title": "담배",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 2000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '담배' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-11",
-   "lastSeen": "2026-11-11",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t3",
-   "title": "굴착기",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '굴착기' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-11",
-   "lastSeen": "2026-11-11",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t4",
-   "title": "포틀랜드 대 오클라호마시티",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 1000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '포틀랜드 대 오클라호마시티' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-11",
-   "lastSeen": "2026-11-11",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t5",
-   "title": "총파업",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '총파업' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-11",
-   "lastSeen": "2026-11-11",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t6",
-   "title": "폴 조지",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '폴 조지' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-11",
-   "lastSeen": "2026-11-11",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t7",
-   "title": "스마일게이트",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 1000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '스마일게이트' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-11",
-   "lastSeen": "2026-11-11",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t8",
-   "title": "사슴",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '사슴' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-11",
-   "lastSeen": "2026-11-11",
-   "days": 1,
-   "cooling": true
   }
  ],
  "runs": [
+  {
+   "at": "2026-11-13T19:50:59.713Z",
+   "mode": "rule",
+   "topics": 9,
+   "ok": [
+    "dc",
+    "google"
+   ]
+  },
   {
    "at": "2026-11-13T06:55:42.409Z",
    "mode": "rule",
