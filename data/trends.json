@@ -1,6 +1,6 @@
 {
  "_note": "tools/learn-trends.mjs 가 만든 파일. 3D NPC 대사·AI 요정(get_trends)이 씁니다. 원문 글 제목은 저장하지 않고 AI가 요약한 주제만 담습니다.",
- "updatedAt": "2026-11-15T18:57:10.692Z",
+ "updatedAt": "2026-11-16T06:45:25.768Z",
  "mode": "rule",
  "sources": {
   "dc": {
@@ -33,15 +33,15 @@
  "topics": [
   {
    "id": "t1",
-   "title": "아파트",
+   "title": "전대영",
    "category": "trend",
-   "summary": "구글 인기 검색어 (검색 5000+)",
+   "summary": "구글 인기 검색어 (검색 1000+)",
    "sources": [
     "google"
    ],
    "heat": 3,
    "lines": [
-    "요즘 '아파트' 검색이 많이 늘었대요 🔎"
+    "요즘 '전대영' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-16",
    "lastSeen": "2026-11-16",
@@ -49,39 +49,7 @@
   },
   {
    "id": "t2",
-   "title": "스포츠조선",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '스포츠조선' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-16",
-   "lastSeen": "2026-11-16",
-   "days": 1
-  },
-  {
-   "id": "t3",
-   "title": "한일전",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 5000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '한일전' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-16",
-   "lastSeen": "2026-11-16",
-   "days": 1
-  },
-  {
-   "id": "t4",
-   "title": "입양",
+   "title": "항공 승무원",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 500+)",
    "sources": [
@@ -89,7 +57,39 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '입양' 검색이 많이 늘었대요 🔎"
+    "요즘 '항공 승무원' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-16",
+   "lastSeen": "2026-11-16",
+   "days": 1
+  },
+  {
+   "id": "t3",
+   "title": "용감한 형사들",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 1000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '용감한 형사들' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-16",
+   "lastSeen": "2026-11-16",
+   "days": 1
+  },
+  {
+   "id": "t4",
+   "title": "체포",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '체포' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-16",
    "lastSeen": "2026-11-16",
@@ -97,15 +97,15 @@
   },
   {
    "id": "t5",
-   "title": "퇴직금",
+   "title": "배재대",
    "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
+   "summary": "구글 인기 검색어 (검색 500+)",
    "sources": [
     "google"
    ],
    "heat": 3,
    "lines": [
-    "요즘 '퇴직금' 검색이 많이 늘었대요 🔎"
+    "요즘 '배재대' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-16",
    "lastSeen": "2026-11-16",
@@ -113,39 +113,7 @@
   },
   {
    "id": "t6",
-   "title": "미미미누",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 1000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '미미미누' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-16",
-   "lastSeen": "2026-11-16",
-   "days": 1
-  },
-  {
-   "id": "t7",
-   "title": "알렉산더 즈베레프",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 1000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '알렉산더 즈베레프' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-16",
-   "lastSeen": "2026-11-16",
-   "days": 1
-  },
-  {
-   "id": "t8",
-   "title": "수상함",
+   "title": "콜린 몽고메리",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -153,7 +121,39 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '수상함' 검색이 많이 늘었대요 🔎"
+    "요즘 '콜린 몽고메리' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-16",
+   "lastSeen": "2026-11-16",
+   "days": 1
+  },
+  {
+   "id": "t7",
+   "title": "삼성sdi",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 2000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '삼성sdi' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-16",
+   "lastSeen": "2026-11-16",
+   "days": 1
+  },
+  {
+   "id": "t8",
+   "title": "uefa 네이션스리그",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 10000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 'uefa 네이션스리그' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-16",
    "lastSeen": "2026-11-16",
@@ -179,13 +179,149 @@
   },
   {
    "id": "t1",
-   "title": "한국노동경제학회",
+   "title": "아파트",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 5000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '아파트' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-16",
+   "lastSeen": "2026-11-16",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t2",
+   "title": "스포츠조선",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 100+)",
    "sources": [
     "google"
    ],
    "heat": 2,
+   "lines": [
+    "요즘 '스포츠조선' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-16",
+   "lastSeen": "2026-11-16",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t3",
+   "title": "한일전",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 5000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '한일전' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-16",
+   "lastSeen": "2026-11-16",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t4",
+   "title": "입양",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '입양' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-16",
+   "lastSeen": "2026-11-16",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t5",
+   "title": "퇴직금",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '퇴직금' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-16",
+   "lastSeen": "2026-11-16",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t6",
+   "title": "미미미누",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 1000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '미미미누' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-16",
+   "lastSeen": "2026-11-16",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t7",
+   "title": "알렉산더 즈베레프",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 1000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '알렉산더 즈베레프' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-16",
+   "lastSeen": "2026-11-16",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t8",
+   "title": "수상함",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '수상함' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-16",
+   "lastSeen": "2026-11-16",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t1",
+   "title": "한국노동경제학회",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 1,
    "lines": [
     "요즘 '한국노동경제학회' 검색이 많이 늘었대요 🔎"
    ],
@@ -202,7 +338,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '요르단 알바레즈' 검색이 많이 늘었대요 🔎"
    ],
@@ -219,7 +355,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '지효' 검색이 많이 늘었대요 🔎"
    ],
@@ -236,7 +372,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '조세' 검색이 많이 늘었대요 🔎"
    ],
@@ -253,7 +389,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 'england vs australia' 검색이 많이 늘었대요 🔎"
    ],
@@ -270,7 +406,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '이세돌' 검색이 많이 늘었대요 🔎"
    ],
@@ -287,7 +423,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '박서진' 검색이 많이 늘었대요 🔎"
    ],
@@ -567,145 +703,18 @@
    "lastSeen": "2026-11-15",
    "days": 1,
    "cooling": true
-  },
-  {
-   "id": "t1",
-   "title": "피트 헤그세스",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '피트 헤그세스' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-14",
-   "lastSeen": "2026-11-14",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t2",
-   "title": "감스트",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '감스트' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-14",
-   "lastSeen": "2026-11-14",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t3",
-   "title": "이유진",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '이유진' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-14",
-   "lastSeen": "2026-11-14",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t4",
-   "title": "elle",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 'elle' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-14",
-   "lastSeen": "2026-11-14",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t5",
-   "title": "이현중",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '이현중' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-14",
-   "lastSeen": "2026-11-14",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t6",
-   "title": "부산 kcc 대 서울 sk",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 1000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '부산 kcc 대 서울 sk' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-14",
-   "lastSeen": "2026-11-14",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t7",
-   "title": "울음",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '울음' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-14",
-   "lastSeen": "2026-11-14",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t8",
-   "title": "해병대 제1사단",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '해병대 제1사단' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-14",
-   "lastSeen": "2026-11-14",
-   "days": 1,
-   "cooling": true
   }
  ],
  "runs": [
+  {
+   "at": "2026-11-16T06:45:25.768Z",
+   "mode": "rule",
+   "topics": 9,
+   "ok": [
+    "dc",
+    "google"
+   ]
+  },
   {
    "at": "2026-11-15T18:57:10.692Z",
    "mode": "rule",
