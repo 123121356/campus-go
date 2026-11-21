@@ -1,6 +1,6 @@
 {
  "_note": "tools/learn-trends.mjs 가 만든 파일. 3D NPC 대사·AI 요정(get_trends)이 씁니다. 원문 글 제목은 저장하지 않고 AI가 요약한 주제만 담습니다.",
- "updatedAt": "2026-11-20T20:30:49.983Z",
+ "updatedAt": "2026-11-21T07:23:32.855Z",
  "mode": "rule",
  "sources": {
   "dc": {
@@ -33,15 +33,15 @@
  "topics": [
   {
    "id": "t1",
-   "title": "한파",
+   "title": "부산 대 충북청주",
    "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
+   "summary": "구글 인기 검색어 (검색 100+)",
    "sources": [
     "google"
    ],
    "heat": 3,
    "lines": [
-    "요즘 '한파' 검색이 많이 늘었대요 🔎"
+    "요즘 '부산 대 충북청주' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-21",
    "lastSeen": "2026-11-21",
@@ -49,87 +49,7 @@
   },
   {
    "id": "t2",
-   "title": "알아흘리 사우디 대 알나스르",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 500+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '알아흘리 사우디 대 알나스르' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-21",
-   "lastSeen": "2026-11-21",
-   "days": 1
-  },
-  {
-   "id": "t3",
-   "title": "riemann hypothe",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 'riemann hypothesis' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-21",
-   "lastSeen": "2026-11-21",
-   "days": 1
-  },
-  {
-   "id": "t4",
-   "title": "변상 일",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 '변상 일' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-21",
-   "lastSeen": "2026-11-21",
-   "days": 1
-  },
-  {
-   "id": "t5",
-   "title": "fear and greed",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 'fear and greed' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-21",
-   "lastSeen": "2026-11-21",
-   "days": 1
-  },
-  {
-   "id": "t6",
-   "title": "india a cricket",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 5000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 3,
-   "lines": [
-    "요즘 'india a cricket team vs nepal national cricket team standings' 검색이 많이 늘었대요 \ud83d"
-   ],
-   "firstSeen": "2026-11-21",
-   "lastSeen": "2026-11-21",
-   "days": 1
-  },
-  {
-   "id": "t7",
-   "title": "의·치의학교육입문검사",
+   "title": "주거",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 200+)",
    "sources": [
@@ -137,7 +57,87 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '의·치의학교육입문검사' 검색이 많이 늘었대요 🔎"
+    "요즘 '주거' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-21",
+   "lastSeen": "2026-11-21",
+   "days": 1
+  },
+  {
+   "id": "t3",
+   "title": "김연정",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '김연정' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-21",
+   "lastSeen": "2026-11-21",
+   "days": 1
+  },
+  {
+   "id": "t4",
+   "title": "손정의",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 5000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '손정의' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-21",
+   "lastSeen": "2026-11-21",
+   "days": 1
+  },
+  {
+   "id": "t5",
+   "title": "카타르 축구 국가대표팀",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '카타르 축구 국가대표팀' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-21",
+   "lastSeen": "2026-11-21",
+   "days": 1
+  },
+  {
+   "id": "t6",
+   "title": "수원삼성",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '수원삼성' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-21",
+   "lastSeen": "2026-11-21",
+   "days": 1
+  },
+  {
+   "id": "t7",
+   "title": "마피아42",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 2000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 3,
+   "lines": [
+    "요즘 '마피아42' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-21",
    "lastSeen": "2026-11-21",
@@ -145,7 +145,7 @@
   },
   {
    "id": "t8",
-   "title": "리만가설 증명",
+   "title": "후티",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 1000+)",
    "sources": [
@@ -153,7 +153,7 @@
    ],
    "heat": 3,
    "lines": [
-    "요즘 '리만가설 증명' 검색이 많이 늘었대요 🔎"
+    "요즘 '후티' 검색이 많이 늘었대요 🔎"
    ],
    "firstSeen": "2026-11-21",
    "lastSeen": "2026-11-21",
@@ -179,13 +179,149 @@
   },
   {
    "id": "t1",
-   "title": "설경구",
+   "title": "한파",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '한파' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-21",
+   "lastSeen": "2026-11-21",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t2",
+   "title": "알아흘리 사우디 대 알나스르",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 500+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '알아흘리 사우디 대 알나스르' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-21",
+   "lastSeen": "2026-11-21",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t3",
+   "title": "riemann hypothe",
    "category": "trend",
    "summary": "구글 인기 검색어 (검색 100+)",
    "sources": [
     "google"
    ],
    "heat": 2,
+   "lines": [
+    "요즘 'riemann hypothesis' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-21",
+   "lastSeen": "2026-11-21",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t4",
+   "title": "변상 일",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '변상 일' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-21",
+   "lastSeen": "2026-11-21",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t5",
+   "title": "fear and greed",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 'fear and greed' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-21",
+   "lastSeen": "2026-11-21",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t6",
+   "title": "india a cricket",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 5000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 'india a cricket team vs nepal national cricket team standings' 검색이 많이 늘었대요 \ud83d"
+   ],
+   "firstSeen": "2026-11-21",
+   "lastSeen": "2026-11-21",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t7",
+   "title": "의·치의학교육입문검사",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 200+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '의·치의학교육입문검사' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-21",
+   "lastSeen": "2026-11-21",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t8",
+   "title": "리만가설 증명",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 1000+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 2,
+   "lines": [
+    "요즘 '리만가설 증명' 검색이 많이 늘었대요 🔎"
+   ],
+   "firstSeen": "2026-11-21",
+   "lastSeen": "2026-11-21",
+   "days": 1,
+   "cooling": true
+  },
+  {
+   "id": "t1",
+   "title": "설경구",
+   "category": "trend",
+   "summary": "구글 인기 검색어 (검색 100+)",
+   "sources": [
+    "google"
+   ],
+   "heat": 1,
    "lines": [
     "요즘 '설경구' 검색이 많이 늘었대요 🔎"
    ],
@@ -202,7 +338,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '이부진' 검색이 많이 늘었대요 🔎"
    ],
@@ -219,7 +355,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '장승수' 검색이 많이 늘었대요 🔎"
    ],
@@ -236,7 +372,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 'mama 2026' 검색이 많이 늘었대요 🔎"
    ],
@@ -253,7 +389,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '광주역' 검색이 많이 늘었대요 🔎"
    ],
@@ -270,7 +406,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '유현조' 검색이 많이 늘었대요 🔎"
    ],
@@ -287,7 +423,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 'sk온' 검색이 많이 늘었대요 🔎"
    ],
@@ -304,7 +440,7 @@
    "sources": [
     "google"
    ],
-   "heat": 2,
+   "heat": 1,
    "lines": [
     "요즘 '수출규제' 검색이 많이 늘었대요 🔎"
    ],
@@ -567,145 +703,18 @@
    "lastSeen": "2026-11-19",
    "days": 1,
    "cooling": true
-  },
-  {
-   "id": "t8",
-   "title": "리트 만점자 천호동",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '리트 만점자 천호동' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-19",
-   "lastSeen": "2026-11-19",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t1",
-   "title": "삼전 닉스",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 2000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '삼전 닉스' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-19",
-   "lastSeen": "2026-11-19",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t2",
-   "title": "한화오션",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 2000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '한화오션' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-19",
-   "lastSeen": "2026-11-19",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t3",
-   "title": "자영업",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 200+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '자영업' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-19",
-   "lastSeen": "2026-11-19",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t4",
-   "title": "승리",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '승리' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-19",
-   "lastSeen": "2026-11-19",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t5",
-   "title": "한화생명",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '한화생명' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-19",
-   "lastSeen": "2026-11-19",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t6",
-   "title": "한화",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 100+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '한화' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-19",
-   "lastSeen": "2026-11-19",
-   "days": 1,
-   "cooling": true
-  },
-  {
-   "id": "t7",
-   "title": "기인",
-   "category": "trend",
-   "summary": "구글 인기 검색어 (검색 1000+)",
-   "sources": [
-    "google"
-   ],
-   "heat": 1,
-   "lines": [
-    "요즘 '기인' 검색이 많이 늘었대요 🔎"
-   ],
-   "firstSeen": "2026-11-19",
-   "lastSeen": "2026-11-19",
-   "days": 1,
-   "cooling": true
   }
  ],
  "runs": [
+  {
+   "at": "2026-11-21T07:23:32.855Z",
+   "mode": "rule",
+   "topics": 9,
+   "ok": [
+    "dc",
+    "google"
+   ]
+  },
   {
    "at": "2026-11-20T20:30:49.983Z",
    "mode": "rule",
