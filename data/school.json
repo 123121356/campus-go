@@ -1,6 +1,6 @@
 {
  "source": "강원대학교 홈페이지 공지사항 (www.kangwon.ac.kr)",
- "fetchedAt": "2026-11-23T01:28:09.226Z",
+ "fetchedAt": "2026-11-24T05:10:59.637Z",
  "labels": {
   "general": "일반공지",
   "academic": "학사공지",
@@ -9,6 +9,49 @@
  },
  "notices": {
   "general": [
+   {
+    "board": "general",
+    "id": "11687",
+    "campus": "ALL",
+    "title": "[도서관] 연구성과 분석을 위한 SciVal 설명회 안내(교직원)",
+    "date": "2026.11.23",
+    "url": "https://www.kangwon.ac.kr/ko/bbs/504/detail.do?pstSn=11687",
+    "by": "",
+    "body": "강원대학교 도서관에서 우리대학 전 캠퍼스 교직원을 대상으로 「연구성과 분석을 위한 SciVal 설명회」 를 개최합니다. ■ SciVal이란? Scopus 논문·인용 데이터를 바탕으로 기관·학과·연구자의 연구성과를 지표로 분석하고, 국내외 대학과 비교할 수 있는 엘스비어(Elsevier)의 연구성과 분석 플랫폼입니다. - 논문 수, 피인용, FWCI 등 대학·학과별 연구성과 확인 - 국내외 대학과 같은 지표로 비교·벤치마킹 - 국제공동연구 현황과 분야별 연구동향 분석 ■ 설명회 안내 - 일시: 2026. 11. 25.(수) 14:00~15:30 - 장소: ZOOM 실시간 온라인 - 대상: 전 캠퍼스 연구성과 분석 및 세계대학평가 대응 관련 교직원 ※ 그 외 관심 있는 교직원 누구나 참석 가능 ■ 설명회 내용 1. Scopus 데이터의 특징과 SciVal 주요 모듈 소개 2. 연구성과 분석에 활용되는 주요 지표의 의미 3. 기관·연구자 등 분석 대상 설정 방법 4. Explore 모듈을 활용한 강원대학교 성과 분석 예시 5. 국내 타 기관의 SciVal 활용 사례 6. 질의응답 ■ 신청 방법 아래 링크에서 사전 등록 후 참여 ▶ 설명회 신청하기 (클릭) https://elsevier.zoom.us/webinar/register/WN_ppXJnrhnTrG-E5AqBXXwaw ※ 등록 시 이름, 이메일, 소속 학과(부서), 사번 입력 및 개",
+    "tel": "0332508005",
+    "summary": "강원대학교 도서관에서 우리대학 전 캠퍼스 교직원을 대상으로 「연구성과 분석을 위한 SciVal 설명회」 를 개최합니다. ■ SciVal이란? Scopus 논문·인용 데이터를 바탕으로 기관·학과·연구자의 연구성과를 지표로 분석하고, 국내외 대학과 비교할 수 있는 엘스비어(Elsevier)",
+    "deadline": null,
+    "target": null,
+    "keywords": [
+     "도서관",
+     "연구성과",
+     "분석을",
+     "위한",
+     "SciVal",
+     "설명회"
+    ]
+   },
+   {
+    "board": "general",
+    "id": "11686",
+    "campus": "삼척",
+    "title": "2027학년도 수시면접평가일（휴강） 통학버스 운행 시간표（11/27）",
+    "date": "2026.11.23",
+    "url": "https://www.kangwon.ac.kr/ko/bbs/504/detail.do?pstSn=11686",
+    "by": "",
+    "body": "목록으로 열람하신 페이지에 대해 만족하십니까? radio_button_unchecked radio_button_checked 매우만족 radio_button_unchecked radio_button_checked 만족 radio_button_unchecked radio_button_checked 보통 radio_button_unchecked radio_button_checked 불만족 radio_button_unchecked radio_button_checked 매우불만족 기타 의견 등록하기 수정 삭제 대학정보공시 개인정보처리방침 이메일무단수집거부 교내 사이트 KNU 기념품 쇼핑몰 KNU-큐브 & 메이커스페이스 강원대학교 교수회 강원대학교 교원양성지원센터 강원대학교 교육과정 강원대학교 발전기금재단 강원대학교병원 강원대학교신문방송사 강원문화연구소 강원종합기술연구원 강원창업보육센터 공동실험실습관 공동실험실습관(삼척) 공자학원 춘천공학교육혁신센터 과학영재교육원 교원초빙 교양교육원 교육연구소 교육연수원 교수학습개발원 국제교류처 국제농촌개발협력사업단 글쓰기센터 농업생명과학연구원 농촌사회교육원 다전공 홈페이지 도서관 동물실험윤리위원회 발전기금재단 백령아트센터 보건의료교육 융합연구소 보건진료소 봉사은행 분자과학융합기술연구소 사회과학연구원 산림과학연구소 산업기술연구소 산학협력단 삼척공학교육혁신센터 삼척산학협력단 삼척평생교육원 의생명과학연구소 생명과",
+    "tel": "0335706239",
+    "summary": "목록으로 열람하신 페이지에 대해 만족하십니까? radio_button_unchecked radio_button_checked 매우만족 radio_button_unchecked radio_button_checked 만족 radio_button_unchecked radio_button_ch",
+    "deadline": null,
+    "target": null,
+    "keywords": [
+     "2027학년도",
+     "수시면접평가일（휴강）",
+     "통학버스",
+     "운행",
+     "시간표（11/27）"
+    ]
+   },
    {
     "board": "general",
     "id": "11682",
@@ -71,6 +114,28 @@
      "핵심역량강화",
      "독서후기대회",
      "안내"
+    ]
+   },
+   {
+    "board": "general",
+    "id": "11679",
+    "campus": "ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL",
+    "title": "2학기 기말고사 대비 비타민 및 유산균 지급 안내",
+    "date": "2026.11.23",
+    "url": "https://www.kangwon.ac.kr/ko/bbs/504/detail.do?pstSn=11679",
+    "by": "",
+    "body": "보건진료소에서는 기말고사 기간을 맞이하여 대학 구성원의 피로회복 및 면역력 강화를 위해 비타민 및 유산균을 지급하고자 합니다. ■ 대 상: 강원대학교 학생 및 교직원 ■ 수 량: 비타민 C 4000정 , 유산균 2500포 ■ 기 간: 2026.11. 23.（월） ~ 보유물량 소진시까지 ■ 내 용: 1인당 쏠라 C 8정 , 유산균 5포 ■ 장 소: 보건진료소（나래관 1층） ☎ 250-8091",
+    "tel": "0332508091",
+    "summary": "보건진료소에서는 기말고사 기간을 맞이하여 대학 구성원의 피로회복 및 면역력 강화를 위해 비타민 및 유산균을 지급하고자 합니다. ■ 대 상: 강원대학교 학생 및 교직원 ■ 수 량: 비타민 C 4000정 , 유산균 2500포 ■ 기 간: 2026.11. 23.（월） ~ 보유물량 소진시까지 ",
+    "deadline": null,
+    "target": null,
+    "keywords": [
+     "2학기",
+     "기말고사",
+     "대비",
+     "비타민",
+     "유산균",
+     "지급"
     ]
    },
    {
@@ -164,7 +229,7 @@
    {
     "board": "general",
     "id": "11669",
-    "campus": "ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL",
+    "campus": "ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL",
     "title": "[매주 수요일은 후원의 집 가는 날] 안내드립니다.",
     "date": "2026.11.18",
     "url": "https://www.kangwon.ac.kr/ko/bbs/504/detail.do?pstSn=11669",
@@ -207,8 +272,8 @@
    {
     "board": "general",
     "id": "11666",
-    "campus": "삼척",
-    "title": "[삼척캠퍼스] U&I학습능력향상 프로그램 안내",
+    "campus": "ALL",
+    "title": "U&I학습능력향상 프로그램 안내",
     "date": "2026.11.17",
     "url": "https://www.kangwon.ac.kr/ko/bbs/504/detail.do?pstSn=11666",
     "by": "",
@@ -218,7 +283,6 @@
     "deadline": null,
     "target": null,
     "keywords": [
-     "삼척캠퍼스",
      "U&I학습능력향상",
      "프로그램",
      "안내"
@@ -293,7 +357,7 @@
    {
     "board": "general",
     "id": "11659",
-    "campus": "춘천\n삼척",
+    "campus": "ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL",
     "title": "(재공고)2026학년도 지역문제 기반 프로젝트 공모전 안내",
     "date": "2026.11.16",
     "url": "https://www.kangwon.ac.kr/ko/bbs/504/detail.do?pstSn=11659",
@@ -375,72 +439,6 @@
      "좋아했네:",
      "즐겁게",
      "함께"
-    ]
-   },
-   {
-    "board": "general",
-    "id": "11654",
-    "campus": "ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL",
-    "title": "삼척캠퍼스 런천컨넥트 시행 및 사전신청 안내(11월26일~27일)-연구과제 수주전략 강연",
-    "date": "2026.11.16",
-    "url": "https://www.kangwon.ac.kr/ko/bbs/504/detail.do?pstSn=11654",
-    "by": "",
-    "body": "안녕하십니까? 삼척기획연구지원과에서는 연구 과제 수주 및 연구 네트워크 활성화를 위하여 다음과 같이 ｢런천커넥트 사업｣을 운영하오니 많은 신청부탁드립니다. \"본 행사는 점심 도시락이 제공되는 브라운백 미팅 형식으로, 편안하고 자연스러운 분위기에서 진행될 예정 입니다.\" 가. 사업내용 : 전임교원 연구역량 강화 및 기초연구사업 이해도 제고를 위한 특강 나. 참여대상 : 강원대학교 전임교원(삼척/도계) (사전신청) 다. 운영방법 : 강연자 발표 후 질의응답 및 토론 ※ 참석자 도시락 제공 라. 운영기간 : 2026. 11. 26.(목) ~ 11. 27.(금) ※ 세부일정 참조 마. 모집기간 : 2026. 11. 9.( 월 ) ~ 11. 20.( 금 ) 바. 신청방법 : 온라인 사전신청 (QR코드 또는 웹사이트 https://m.site.naver.com/2kk9b ) 사. 상세일정 : 첨부문서 참조 참석 전 사전신청을 먼저 해주셔야 됩니다. 감사합니다.",
-    "tel": "0335706282",
-    "summary": "안녕하십니까? 삼척기획연구지원과에서는 연구 과제 수주 및 연구 네트워크 활성화를 위하여 다음과 같이 ｢런천커넥트 사업｣을 운영하오니 많은 신청부탁드립니다. \"본 행사는 점심 도시락이 제공되는 브라운백 미팅 형식으로, 편안하고 자연스러운 분위기에서 진행될 예정 입니다.\" 가. 사업내용 :",
-    "deadline": "2026-11-27",
-    "target": null,
-    "keywords": [
-     "삼척캠퍼스",
-     "런천컨넥트",
-     "시행",
-     "사전신청",
-     "안내",
-     "11월26일~27일"
-    ]
-   },
-   {
-    "board": "general",
-    "id": "11649",
-    "campus": "ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL",
-    "title": "[강원특별자치도미래센터] 2026년 가족돌봄아동·청년 자기돌봄비 지원 안내",
-    "date": "2026.11.12",
-    "url": "https://www.kangwon.ac.kr/ko/bbs/504/detail.do?pstSn=11649",
-    "by": "",
-    "body": "",
-    "tel": "01081992034",
-    "summary": "[강원특별자치도미래센터] 2026년 가족돌봄아동·청년 자기돌봄비 지원 안내",
-    "deadline": null,
-    "target": null,
-    "keywords": [
-     "강원특별자치도미래센터",
-     "2026년",
-     "가족돌봄아동",
-     "청년",
-     "자기돌봄비",
-     "지원"
-    ]
-   },
-   {
-    "board": "general",
-    "id": "11648",
-    "campus": "춘천\n삼척",
-    "title": "2026학년도 2학기 춘천ㆍ삼척캠퍼스 재학생 등록금 분할납부 4차(최종) 납부기간 안내",
-    "date": "2026.11.12",
-    "url": "https://www.kangwon.ac.kr/ko/bbs/504/detail.do?pstSn=11648",
-    "by": "",
-    "body": "2026학년도 2학기 춘천·삼척캠퍼스 재학생 등록금 4차 분할납부(최종) 기간을 아래와 같이 안내합니다. 1. 대상: 분할납부 신청학생 2. 등록금 조회/납부기간: 2026. 11. 17.(화) 09시 ~ 11. 18.(수) 16시 ※ 조회방법: [학교홈페이지]-[통합인트로]-[KNU-SERVICE]-[등록금고지서]-로그인（학번, 생년월일8자리）-고지서 조회 3. 납부기관: 신한은행 - 은행창구 방문: 고지서 출력 후 은행 방문 납부 - 인터넷뱅킹: 고지서 상의 가상계좌로 납부 4. 납부확인서 출력: [등록금고지서]-로그인（학번, 생년월일8자리）-납부확인서 조회 ※ 납부확인은 다음날 오전 10시부터 납부확인서 출력으로 확인 가능 5. 문의처: 춘천캠퍼스 033-250-7054, 삼척캠퍼스 033-570-6242",
-    "tel": "0332507054",
-    "summary": "2026학년도 2학기 춘천·삼척캠퍼스 재학생 등록금 4차 분할납부(최종) 기간을 아래와 같이 안내합니다. 1. 대상: 분할납부 신청학생 2. 등록금 조회/납부기간: 2026. 11. 17.(화) 09시 ~ 11. 18.(수) 16시 ※ 조회방법: [학교홈페이지]-[통합인트로]-[KNU-",
-    "deadline": "2026-11-18",
-    "target": null,
-    "keywords": [
-     "2026학년도",
-     "2학기",
-     "춘천ㆍ삼척캠퍼스",
-     "재학생",
-     "등록금",
-     "분할납부"
     ]
    }
   ],
@@ -855,6 +853,28 @@
   "scholarship": [
    {
     "board": "scholarship",
+    "id": "2551",
+    "campus": "ALL",
+    "title": "2027년 1학기 국가장학금 1차 신청 안내",
+    "date": "2026.11.24",
+    "url": "https://www.kangwon.ac.kr/ko/bbs/721/detail.do?pstSn=2551",
+    "by": "춘천학생지원과",
+    "body": "*재학생은 1차 신청이 원칙(재학중 2회에 한해 2차 신청으로 수혜 가능) *신입생 전액장학금 관련은 장학공지 게시판 내 2499번 게시글과 아래 첨부파일 참고",
+    "tel": "1599-2000",
+    "summary": "*재학생은 1차 신청이 원칙(재학중 2회에 한해 2차 신청으로 수혜 가능) *신입생 전액장학금 관련은 장학공지 게시판 내 2499번 게시글과 아래 첨부파일 참고",
+    "deadline": null,
+    "target": null,
+    "keywords": [
+     "2027년",
+     "1학기",
+     "국가장학금",
+     "1차",
+     "신청",
+     "안내"
+    ]
+   },
+   {
+    "board": "scholarship",
     "id": "2550",
     "campus": "ALL",
     "title": "2026년 청로장학재단 제7기 장학생 선발 안내",
@@ -962,7 +982,7 @@
    {
     "board": "scholarship",
     "id": "2543",
-    "campus": "ALL",
+    "campus": "ALL ALL ALL ALL ALL ALL ALL ALL ALL ALL",
     "title": "[한국장학재단]학자금 중복지원 방지 사업 안내",
     "date": "2026.11.09",
     "url": "https://www.kangwon.ac.kr/ko/bbs/721/detail.do?pstSn=2543",
@@ -1130,7 +1150,7 @@
    {
     "board": "scholarship",
     "id": "2533",
-    "campus": "ALL",
+    "campus": "ALL ALL ALL ALL ALL ALL ALL ALL ALL",
     "title": "2026년도 하반기 강화군 대학생 등록금 지원사업 안내",
     "date": "2026.10.27",
     "url": "https://www.kangwon.ac.kr/ko/bbs/721/detail.do?pstSn=2533",
@@ -1168,7 +1188,7 @@
    {
     "board": "scholarship",
     "id": "2531",
-    "campus": "ALL ALL ALL ALL ALL ALL ALL ALL ALL",
+    "campus": "ALL",
     "title": "(한국선원복지고용센터) 2026년 2학기 선원가족장학사업 장학생 모집 기간 연장",
     "date": "2026.10.26",
     "url": "https://www.kangwon.ac.kr/ko/bbs/721/detail.do?pstSn=2531",
@@ -1243,25 +1263,6 @@
      "기부장학금",
      "한국장학재단",
      "생활비장학금"
-    ]
-   },
-   {
-    "board": "scholarship",
-    "id": "2527",
-    "campus": "ALL",
-    "title": "2026년 2학기 안산시 대학생 본인부담 등록금 반값지원 홍보",
-    "date": "2026.10.20",
-    "url": "https://www.kangwon.ac.kr/ko/bbs/721/detail.do?pstSn=2527",
-    "by": "강릉학생지원과",
-    "body": "목록으로 열람하신 페이지에 대해 만족하십니까? radio_button_unchecked radio_button_checked 매우만족 radio_button_unchecked radio_button_checked 만족 radio_button_unchecked radio_button_checked 보통 radio_button_unchecked radio_button_checked 불만족 radio_button_unchecked radio_button_checked 매우불만족 기타 의견 등록하기 수정 삭제 대학정보공시 개인정보처리방침 이메일무단수집거부 교내 사이트 KNU 기념품 쇼핑몰 KNU-큐브 & 메이커스페이스 강원대학교 교수회 강원대학교 교원양성지원센터 강원대학교 교육과정 강원대학교 발전기금재단 강원대학교병원 강원대학교신문방송사 강원문화연구소 강원종합기술연구원 강원창업보육센터 공동실험실습관 공동실험실습관(삼척) 공자학원 춘천공학교육혁신센터 과학영재교육원 교원초빙 교양교육원 교육연구소 교육연수원 교수학습개발원 국제교류처 국제농촌개발협력사업단 글쓰기센터 농업생명과학연구원 농촌사회교육원 다전공 홈페이지 도서관 동물실험윤리위원회 발전기금재단 백령아트센터 보건의료교육 융합연구소 보건진료소 봉사은행 분자과학융합기술연구소 사회과학연구원 산림과학연구소 산업기술연구소 산학협력단 삼척공학교육혁신센터 삼척산학협력단 삼척평생교육원 의생명과학연구소 생명과",
-    "tel": "031-414-0924",
-    "summary": "안산시 대학생 본인부담 등록금 반값지원 사업에 대한 홍보 공지입니다.",
-    "deadline": null,
-    "target": "전체 학생",
-    "keywords": [
-     "안산시",
-     "등록금지원",
-     "반값등록금"
     ]
    }
   ],
